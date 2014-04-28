@@ -1,0 +1,574 @@
+{
+	"scope": "source.danmakufu",
+
+	"completions":
+	[
+
+		// Math functions
+
+		"Math::min(a, b)\treal",
+		"Math::max(a, b)\treal",
+		"Math::log(a)\treal",
+		"Math::log10(a)\treal",
+		"Math::cos(angle)\treal",
+		"Math::sin(angle)\treal",
+		"Math::tan(angle)\treal",
+		"Math::acos(x)\treal",
+		"Math::asin(y)\treal",
+		"Math::atan(a)\treal",
+		"Math::atan2(y, x)\treal",
+		"Math::rand(min, max)\treal",
+		"Math::round(a)\treal",
+		"Math::truncate(a)\treal",
+		"Math::ceil(a)\treal",
+		"Math::floor(a)\treal",
+		"Math::absolute(a)\treal",
+		"Math::modc(a, mod)\treal",
+
+		// String functions
+
+		"String::InstallFont(path)\tbool",
+		"String::ToString(a)\tchar",
+		"String::IntToString(num)\tchar",
+		"String::itoa(num)\tchar",
+		"String::rtoa(num)\tchar",
+		"String::rtos(format, num)\tchar",
+		"String::vtos(format, num)\tchar",
+		"String::atoi(str)\treal",
+		"String::ator(str)\treal",
+		"String::TrimString(str)\tchar",
+		"String::SplitString(str, delimiter)\tchar[]",
+
+		// Path functions
+
+		"Path::GetFileDirectory(path)\tchar",
+		"Path::GetDirectoryList(path)\tstring[]",
+		"Path::GetModuleDirectory()\tchar",
+		"Path::GetMainStgScriptPath()\tchar",
+		"Path::GetMainPackageScriptPath()\tchar",
+		"Path::GetMainStgScriptDirectory()\tchar",
+		"Path::GetCurrentScriptDirectory()\tchar",
+		"Path::GetScriptPathList(folder, type)\tstring[]",
+
+		// Time functions
+
+		"Time::GetCurrentDateTimeS()\tchar",
+		"Time::GetStageTime()\treal",
+		"Time::GetPackageTime()\treal",
+		"Time::GetCurrentFps()\treal",
+		"Time::GetReplayFps()\treal",
+
+		// Debug functions
+
+		"Debug::WriteLog(string)\tvoid",
+		"Debug::RaiseError(string)\tvoid",
+
+		// Common Data functions
+		"CommonData::SetCommonData(key, value)\tvoid",
+		"CommonData::GetCommonData(key, default)\tfree",
+		"CommonData::ClearCommonData()\tvoid",
+		"CommonData::DeleteCommonData(key)\tvoid",
+		"CommonData::SetAreaCommonData(area, key, value)\tvoid",
+		"CommonData::GetAreaCommonData(area, key, default)\tfree",
+		"CommonData::ClearAreaCommonData(area)\tvoid",
+		"CommonData::DeleteAreaCommonData(area, key)\tvoid",
+		"CommonData::CreateCommonDataArea(area)\tvoid",
+		"CommonData::IsCommonDataAreaExists(area)\tbool",
+		"CommonData::CopyCommonDataArea(area1, area2)\tvoid",
+		"CommonData::GetCommonDataAreaKeyList()\tchar[]",
+		"CommonData::GetCommonDataValueKeyList(area)\tchar[]",
+		"CommonData::SaveCommonDataAreaA1(area)\tbool",
+		"CommonData::LoadCommonDataAreaA1(area)\tbool",
+		"CommonData::SaveCommonDataAreaA2(area, path)\tbool",
+		"CommonData::LoadCommonDataAreaA2(area, path)\tbool",
+		"CommonData::SaveCommonDataAreaToReplayFile(area)\tbool",
+		"CommonData::LoadCommonDataAreaFromReplayFile(area)\tbool",
+
+		// Audio functions
+
+		"Audio::LoadSound(path)\tvoid",
+		"Audio::RemoveSound(path)\tvoid",
+		"Audio::PlayBGM(path, loop_start, loop_end)\tvoid",
+		"Audio::PlaySE(path)\tvoid",
+		"Audio::StopSound(path)\tvoid",
+
+		//Input functions
+
+		"Input::GetVirtualKeyState(key)\tconstant",
+		"Input::SetVirtualKeyState(key, state)\tvoid",
+		"Input::AddVirtualKey(v_key, key, pad_key)\tvoid",
+		"Input::AddReplayTargetVirtualKey(key)\tvoid",
+		"Input::GetKeyState(key)\tconstant",
+		"Input::GetMouseState(button)\tconstant",
+		"Input::GetMouseX()\treal",
+		"Input::GetMouseY()\treal",
+		"Input::GetMouseMoveZ()\treal",
+		"Input::SetSkipModeKey(key)\tvoid",
+
+		//Render functions
+
+		"Render::LoadTexture(path)\tvoid",
+		"Render::LoadTextureInLoadThread(path)\tvoid",
+		"Render::RemoveTexture(path)\tvoid",
+		"Render::GetTextureWidth(path)\treal",
+		"Render::GetTextureHeight(path)\treal",
+		"Render::SetFogEnable(bool)\tvoid",
+		"Render::SetFogParam(start, end, r, g, b)\tvoid",
+		"Render::ClearInvalidRenderPriority()\tvoid",
+		"Render::SetInvalidRenderPriorityA1(start, end)\tvoid",
+		"Render::GetReservedRenderTargetName(index)\tvoid",
+		"Render::CreateRenderTarget(target)\tbool",
+		"Render::RenderToTextureA1(target, start, end, clear)\tvoid",
+		"Render::RenderToTextureB1(target, obj, clear)\tvoid",
+		"Render::SaveRenderedTextureA1(target, file)\tvoid",
+		"Render::SaveRenderedTextureA2(target, file, l, t, r, b)\tvoid",
+		"Render::SaveSnapShotA1(file)\tvoid",
+		"Render::SaveSnapShotA2(file, l, t, r, b)\tvoid",
+
+		//3D Camera functions
+
+		"3DCamera::SetCameraFocusX(x)\tvoid",
+		"3DCamera::SetCameraFocusY(y)\tvoid",
+		"3DCamera::SetCameraFocusZ(z)\tvoid",
+		"3DCamera::SetCameraFocusXYZ(x, y, z)\tvoid",
+		"3DCamera::SetCameraRadius(radius)\tvoid",
+		"3DCamera::SetCameraAzimuthAngle(angle)\tvoid",
+		"3DCamera::SetCameraElevationAngle(angle)\tvoid",
+		"3DCamera::SetCameraYaw(angle)\tvoid",
+		"3DCamera::SetCameraPitch(pitch)\tvoid",
+		"3DCamera::SetCameraRoll(roll)\tvoid",
+		"3DCamera::GetCameraX()\treal",
+		"3DCamera::GetCameraY()\treal",
+		"3DCamera::GetCameraZ()\treal",
+		"3DCamera::GetCameraFocusX()\treal",
+		"3DCamera::GetCameraFocusY()\treal",
+		"3DCamera::GetCameraFocusZ()\treal",
+		"3DCamera::GetCameraRadius()\treal",
+		"3DCamera::GetCameraAzimuthAngle(angle)\treal",
+		"3DCamera::GetCameraElevationAngle(angle)\treal",
+		"3DCamera::GetCameraYaw()\treal",
+		"3DCamera::GetCameraPitch(pitch)\treal",
+		"3DCamera::GetCameraRoll(roll)\treal",
+		"3DCamera::SetCameraPerspectiveClip(near_clip, far_clip)\tvoid",
+
+		// 2D Camera functions
+
+		"2DCamera::Set2DCameraFocusX(x)\tvoid",
+		"2DCamera::Set2DCameraAngleZ(angle)\tvoid",
+		"2DCamera::Set2DCameraFocusY(y)\tvoid",
+		"2DCamera::Set2DCameraRatio(ratio)\tvoid",
+		"2DCamera::Set2DCameraRatioX(ratio)\tvoid",
+		"2DCamera::Set2DCameraRatioY(ratio)\tvoid",
+		"2DCamera::Reset2DCamera()\tvoid",
+		"2DCamera::Get2DCameraX()\treal",
+		"2DCamera::Get2DCameraY()\treal",
+		"2DCamera::Get2DCameraAngleZ()\treal",
+		"2DCamera::Get2DCameraRatio()\treal",
+		"2DCamera::Get2DCameraRatioX()\treal",
+		"2DCamera::Get2DCameraRatioY()\treal",
+
+		//Script functions
+
+		"Script::LoadScript(path)\treal[]",
+		"Script::LoadScriptInThread(path)\treal[]",
+		"Script::StartScript(id)\tvoid",
+		"Script::CloseScript(id)\tvoid",
+		"Script::IsCloseScript(id)\tbool",
+		"Script::SetScriptArgument(id, index, value)\tvoid",
+		"Script::GetScriptArgument(index)\tfree",
+		"Script::GetScriptArgumentCount()\treal",
+		"Script::CloseStgScene()\tvoid",
+		"Script::GetOwnScriptID()\treal[]",
+		"Script::GetEventType()\tconstant",
+		"Script::GetEventArgument(index)\tdepend",
+		"Script::SetScriptResult(value)\tvoid",
+		"Script::GetScriptResult(id)\tfree",
+		"Script::SetAutoDeleteObject(delete)\tvoid",
+		"Script::NotifyEvent(id, event_type, value)\tvoid",
+		"Script::NotifyEventAll(event_type, value)\tvoid",
+		"Script::GetScriptInfoA1(path, info_type)\tdepend",
+
+		//System functions
+
+		"System::SetStgFrame(l, t, r, b, min_layer, max_layer)\t",
+		"System::GetScore()\treal",
+		"System::AddScore(value)\t",
+		"System::GetGraze()\treal",
+		"System::AddGraze(value)\t",
+		"System::GetPoint()\treal",
+		"System::AddPoint(num_items)\t",
+		"System::SetItemRenderPriorityI(layer)\t",
+		"System::SetShotRenderPriorityI(layer)\t",
+		"System::GetStgFrameRenderPriorityMinI()\treal",
+		"System::GetStgFrameRenderPriorityMaxI()\treal",
+		"System::GetItemRenderPriorityI()\treal",
+		"System::GetShotRenderPriorityI()\treal",
+		"System::GetPlayerRenderPriorityI()\treal",
+		"System::GetCameraFocusPermitPriorityI()\treal",
+		"System::GetStgFrameLeft()\treal",
+		"System::GetStgFrameTop()\treal",
+		"System::GetStgFrameWidth()\treal",
+		"System::GetStgFrameHeight()\treal",
+		"System::GetScreenWidth()\treal",
+		"System::GetScreenHeight()\treal",
+		"System::IsReplay()\tbool",
+		"System::AddArchiveFile(path)\tbool",
+
+		//Player functions
+
+		"Player::GetPlayerObjectID()\tobj",
+		"Player::GetPlayerScriptID()\treal",
+		"Player::SetPlayerSpeed(normal_speed, focus_speed)\t",
+		"Player::SetPlayerClip(l, t, r, b)\t",
+		"Player::SetPlayerLife(value)\t",
+		"Player::SetPlayerSpell(value)\t",
+		"Player::SetPlayerPower(value)\t",
+		"Player::SetPlayerInvincibilityFrame(num_frames)\t",
+		"Player::SetPlayerDownStateFrame(num_frames)\t",
+		"Player::SetPlayerRebirthFrame(num_frames)\t",
+		"Player::SetPlayerRebirthLossFrame(lost_frames)\t",
+		"Player::SetPlayerAutoItemCollectLine(y)\t",
+		"Player::SetForbidPlayerShot(forbid)\t",
+		"Player::SetForbidPlayerSpell(forbid)\t",
+		"Player::GetPlayerX()\treal",
+		"Player::GetPlayerY()\treal",
+		"Player::GetPlayerState()\tconstant",
+		"Player::GetPlayerLife()\treal",
+		"Player::GetPlayerSpell()\treal",
+		"Player::GetPlayerPower()\treal",
+		"Player::GetPlayerInvincibilityFrame()\treal",
+		"Player::GetPlayerDownStateFrame()\treal",
+		"Player::GetPlayerRebirthFrame()\treal",
+		"Player::GetAngleToPlayer(obj)\treal",
+		"Player::IsPermitPlayerShot()\tbool",
+		"Player::IsPermitPlayerSpell()\tbool",
+		"Player::IsPlayerLastSpellWait()\tbool",
+		"Player::IsPlayerSpellActive()\tbool",
+		"Player::GetPlayerID()\tchar",
+		"Player::GetPlayerReplayName()\tchar",
+
+
+		//Enemy functions
+
+		"Enemy::GetEnemyBossSceneObjectID()\tobj",
+		"Enemy::GetEnemyBossObjectID()\tobj[]",
+		"Enemy::GetAllEnemyID()\tobj[]",
+		"Enemy::GetIntersectionRegistedEnemyID()\tobj[]",
+		"Enemy::GetAllEnemyIntersectionPosition()\treal[][]",
+		"Enemy::GetEnemyIntersectionPosition(x, y, max_num)\treal[][]",
+		"Enemy::GetEnemyIntersectionPositionByIdA1(obj)\treal[][]",
+		"Enemy::GetEnemyIntersectionPositionByIdA2(obj, x, y)\treal[][]",
+		"Enemy::LoadEnemyShotData(path)\t",
+		"Enemy::ReloadEnemyShotData(path)\t",
+
+		//Shot functions
+
+		"Shot::DeleteShotAll(bullet_type, delete_type)\t",
+		"Shot::DeleteShotInCircle(bullet_type, delete_type, x, y, r)\t",
+		"Shot::CreateShotA1(x, y, s, a, g, d)\tobj",
+		"Shot::CreateShotA2(x, y, s, a, acc, max_s, g, d)\tobj",
+		"Shot::CreateShotOA1(obj, speed, angle, g, d)\tobj",
+		"Shot::CreateShotB1(x, y, x_spd, y_spd, g, d)\tobj",
+		"Shot::CreateShotB2(x, y, x_spd, y_spd, x_acc, y_acc, x_max, y_max, g, d)\tobj",
+		"Shot::CreateShotOB1(obj, x, y, g, d)\tobj",
+		"Shot::CreateLooseLaserA1(x, y, s, a, l, w, g, d)\tobj",
+		"Shot::CreateStraightLaserA1(x, y, a, l, w, f, g, d)\tobj",
+		"Shot::CreateCurveLaserA1(x, y, s, a, l, w, g, d)\tobj",
+		"Shot::SetShotIntersectionCircle(x, y, r)\t",
+		"Shot::SetShotIntersectionLine(start_x, start_y, end_x, end_y, r)\t",
+		"Shot::GetShotIdInCircleA1(x, y, r)\tobj[]",
+		"Shot::GetShotIdInCircleA2(x, y, r, target_type)\tobj[]",
+		"Shot::GetShotCount(target_type)\treal",
+		"Shot::SetShotAutoDeleteClip(l, t, r, b)\t",
+		"Shot::GetShotDataInfoA1(graphic, target_type, info_type)\tdepend",
+
+		//Item functions
+
+		"Item::CreateItemA1(item_type, x, y, score)\tobj",
+		"Item::CreateItemA2(item_type, x, y, x_dest, y_dest, score)\tobj",
+		"Item::CreateItemU1(id, x, y, score)\tobj",
+		"Item::CreateItemU2(id, x, y, x_dest, y_dest, score)\tobj",
+		"Item::CollectAllItems()\t",
+		"Item::CollectItemsByType(item_type)\t",
+		"Item::CollectItemsInCircle(x, y, r)\t",
+		"Item::CancelCollectItems()\t",
+		"Item::StartItemScript(path)\t",
+		"Item::LoadItemData(path)\t",
+		"Item::ReloadItemData(path)\t",
+		"Item::SetDefaultBonusItemEnable(use)\t",
+
+		//Other functions
+
+		"Other::StartSlow(obj, fps)\t",
+		"Other::StopSlow(obj)\t",
+		"Other::IsIntersected_Line_Circle(start_x, start_y, end_x, end_y, w, x, y, r)\tbool",
+		"Other::IsIntersected_Obj_Obj(obj1, obj2)\tbool",
+		"Other::GetObjectDistance(obj1, obj2)\t",
+		"Other::GetObject2dPosition(obj)\treal[]",
+		"Other::Get2dPosition(x, y, z)\treal[]",
+
+		// Generic Object functions
+
+		/*"Obj_Delete(obj)\t",
+		"Obj_IsDeleted(obj)\t",
+		"Obj_SetVisible(obj, visible)\t",
+		"Obj_SetRenderPriority(obj, priority_ratio)\t",
+		"Obj_SetRenderPriorityI(obj, priority)\t",
+		"Obj_GetRenderPriority(obj)\t",
+		"Obj_GetRenderPriorityI(obj)\t",
+		"Obj_GetValue(obj, key)\t",
+		"Obj_GetValueD(obj, key, default)\t",
+		"Obj_SetValue(obj, key, value)\t",
+		"Obj_DeleteValue(obj, key)\t",
+		"Obj_IsValueExists(obj, key)\t",
+		"Obj_GetType(obj)\t",
+
+		// Render Object functions
+
+		"ObjRender_SetX()\t",
+		"ObjRender_SetY()\t",
+		"ObjRender_SetZ()\t",
+		"ObjRender_SetPosition()\t",
+		"ObjRender_SetAngleX()\t",
+		"ObjRender_SetAngleY()\t",
+		"ObjRender_SetAngleZ()\t",
+		"ObjRender_SetAngleXYZ()\t",
+		"ObjRender_SetScaleX()\t",
+		"ObjRender_SetScaleY()\t",
+		"ObjRender_SetScaleZ()\t",
+		"ObjRender_SetScaleXYZ()\t",
+		"ObjRender_SetColor()\t",
+		"ObjRender_SetAlpha()\t",
+		"ObjRender_SetBlendType()\t",
+		"ObjRender_GetX()\t",
+		"ObjRender_GetY()\t",
+		"ObjRender_GetZ()\t",
+		"ObjRender_GetAngleX()\t",
+		"ObjRender_GetAngleY()\t",
+		"ObjRender_GetAngleZ()\t",
+		"ObjRender_GetScaleX()\t",
+		"ObjRender_GetScaleY()\t",
+		"ObjRender_GetScaleZ()\t",
+		"ObjRender_GetBlendType()\t",
+		"ObjRender_SetZWrite()\t",
+		"ObjRender_SetZTest()\t",
+		"ObjRender_SetFogEnable()\t",
+		"ObjRender_SetPermitCamera()\t",
+
+		// Primitive Object functions
+
+		"ObjPrim_Create()\t",
+		"ObjPrim_SetPrimitiveType()\t",
+		"ObjPrim_SetVertexCount()\t",
+		"ObjPrim_GetVertexCount()\t",
+		"ObjPrim_SetTexture()\t",
+		"ObjPrim_SetVertexPosition()\t",
+		"ObjPrim_SetVertexUV()\t",
+		"ObjPrim_SetVertexUVT()\t",
+		"ObjPrim_SetVertexColor()\t",
+		"ObjPrim_SetVertexAlpha()\t",
+
+		// 2D Sprite Object functions
+
+		"ObjSprite2D_SetSourceRect()\t",
+		"ObjSprite2D_SetDestRect()\t",
+		"ObjSprite2D_SetDestCenter()\t",
+
+		// 2D Sprite List Object functions
+
+		"ObjSpriteList2D_SetSourceRect()\t",
+		"ObjSpriteList2D_SetDestRect()\t",
+		"ObjSpriteList2D_SetDestCenter()\t",
+		"ObjSpriteList2D_AddVertex()\t",
+		"ObjSpriteList2D_CloseVertex()\t",
+		"ObjSpriteList2D_ClearVertexCount()\t",
+
+		// 3D Sprite Object functions
+
+		"ObjSprite3D_SetSourceRect()\t",
+		"ObjSprite3D_SetDestRect()\t",
+		"ObjSprite3D_SetSourceDestRect()\t",
+		"ObjSprite3D_SetBillboard()\t",
+
+		// 3D Mesh Object functions
+
+		"ObjMesh_Create()\t",
+		"ObjMesh_Load()\t",
+		"ObjMesh_SetColor()\t",
+		"ObjMesh_SetAlpha()\t",
+		"ObjMesh_SetAnimation()\t",
+		"ObjMesh_SetCoordinate2D()\t",
+
+		// Text Object functions
+
+		"ObjText_Create()\t",
+		"ObjText_SetText()\t",
+		"ObjText_SetFontType()\t",
+		"ObjText_SetFontSize()\t",
+		"ObjText_SetFontBold()\t",
+		"ObjText_SetFontColorTop()\t",
+		"ObjText_SetFontColorBottom()\t",
+		"ObjText_SetFontBorderWidth()\t",
+		"ObjText_SetFontBorderType()\t",
+		"ObjText_SetFontBorderColor()\t",
+		"ObjText_SetMaxWidth()\t",
+		"ObjText_SetMaxHeight()\t",
+		"ObjText_SetLinePitch()\t",
+		"ObjText_SetSidePitch()\t",
+		"ObjText_SetTransCenter()\t",
+		"ObjText_SetAutoTransCenter()\t",
+		"ObjText_SetHorizontalAlignment()\t",
+		"ObjText_SetSyntacticAnalysis()\t",
+		"ObjText_GetTextLength()\t",
+		"ObjText_GetTextLengthCU()\t",
+		"ObjText_GetTextLengthCUL()\t",
+
+		// Sound Object functions
+
+		"ObjSound_Create()\t",
+		"ObjSound_Load()\t",
+		"ObjSound_Play()\t",
+		"ObjSound_Stop()\t",
+		"ObjSound_SetVolumeRate()\t",
+		"ObjSound_SetFade()\t",
+		"ObjSound_SetLoopEnable()\t",
+		"ObjSound_SetLoopTime()\t",
+		"ObjSound_SetLoopSampleCount()\t",
+		"ObjSound_SetRestartEnable()\t",
+		"ObjSound_SetSoundDivision()\t",
+		"ObjSound_IsPlaying()\t",
+		"ObjSound_GetVolumeRate()\t",
+
+		// File Object functions
+
+		"ObjFile_Create()\t",
+		"ObjFile_Open()\t",
+		"ObjFile_OpenNW()\t",
+		"ObjFile_Store()\t",
+		"ObjFile_GetSize()\t",
+
+		// Text File Object functions
+
+		"ObjFileT_GetLineCount()\t",
+		"ObjFileT_GetLineText()\t",
+		"ObjFileT_SplitLineText()\t",
+		"ObjFileT_AddLine()\t",
+		"ObjFileT_ClearLine()\t",
+
+		// Binary File Object functions
+
+		"ObjFileB_SetByteOrder()\t",
+		"ObjFileB_SetCharacterCode()\t",
+		"ObjFileB_GetPointer()\t",
+		"ObjFileB_Seek()\t",
+		"ObjFileB_ReadBoolean()\t",
+		"ObjFileB_ReadByte()\t",
+		"ObjFileB_ReadShort()\t",
+		"ObjFileB_ReadInteger()\t",
+		"ObjFileB_ReadLong()\t",
+		"ObjFileB_ReadFloat()\t",
+		"ObjFileB_ReadDouble()\t",
+		"ObjFileB_ReadString()\t",
+
+		// Move Object functions
+
+		"ObjMove_SetX()\t",
+		"ObjMove_SetY()\t",
+		"ObjMove_SetPosition()\t",
+		"ObjMove_SetSpeed()\t",
+		"ObjMove_SetAngle()\t",
+		"ObjMove_SetAcceleration()\t",
+		"ObjMove_SetMaxSpeed()\t",
+		"ObjMove_SetAngularVelocity()\t",
+		"ObjMove_SetDestAtSpeed()\t",
+		"ObjMove_SetDestAtFrame()\t",
+		"ObjMove_SetDestAtWeight()\t",
+		"ObjMove_AddPatternA1()\t",
+		"ObjMove_AddPatternA2()\t",
+		"ObjMove_AddPatternA3()\t",
+		"ObjMove_AddPatternA4()\t",
+		"ObjMove_AddPatternB1()\t",
+		"ObjMove_AddPatternB2()\t",
+		"ObjMove_AddPatternB3()\t",
+		"ObjMove_GetX()\t",
+		"ObjMove_GetY()\t",
+		"ObjMove_GetSpeed()\t",
+		"ObjMove_GetAngle()\t",
+
+		// Enemy Object functions
+
+		"ObjEnemy_Create()\t",
+		"ObjEnemy_Regist()\t",
+		"ObjEnemy_GetInfo()\t",
+		"ObjEnemy_SetLife()\t",
+		"ObjEnemy_AddLife()\t",
+		"ObjEnemy_SetDamageRate()\t",
+		"ObjEnemy_SetIntersectionCircleToShot()\t",
+		"ObjEnemy_SetIntersectionCircleToPlayer()\t",
+
+		// Boss Scene Object functions
+
+		"ObjEnemyBossScene_Create()\t",
+		"ObjEnemyBossScene_Regist()\t",
+		"ObjEnemyBossScene_Add()\t",
+		"ObjEnemyBossScene_LoadInThread()\t",
+		"ObjEnemyBossScene_GetInfo()\t",
+		"ObjEnemyBossScene_SetSpellTimer()\t",
+		"ObjEnemyBossScene_StartSpell()\t",
+
+		// Shot Object functions
+
+		"ObjShot_Create()\t",
+		"ObjShot_Regist()\t",
+		"ObjShot_SetAutoDelete()\t",
+		"ObjShot_FadeDelete()\t",
+		"ObjShot_SetDeleteFrame()\t",
+		"ObjShot_SetDelay()\t",
+		"ObjShot_SetSpellResist()\t",
+		"ObjShot_SetGraphic()\t",
+		"ObjShot_SetSourceBlendType()\t",
+		"ObjShot_SetDamage()\t",
+		"ObjShot_SetPenetration()\t",
+		"ObjShot_SetEraseShot()\t",
+		"ObjShot_SetSpellFactor()\t",
+		"ObjShot_ToItem()\t",
+		"ObjShot_AddShotA1()\t",
+		"ObjShot_AddShotA2()\t",
+		"ObjShot_SetIntersectionCircleA1()\t",
+		"ObjShot_SetIntersectionCircleA2()\t",
+		"ObjShot_SetIntersectionEnable()\t",
+		"ObjShot_SetItemChange()\t",
+		"ObjShot_IsSpellResist()\t",
+		"ObjShot_GetImageID()\t",
+		"ObjLaser_SetLength()\t",
+		"ObjLaser_SetRenderWidth()\t",
+		"ObjLaser_SetIntersectionWidth()\t",
+		"ObjLaser_SetInvalidLength()\t",
+		"ObjLaser_GetLength()\t",
+		"ObjStLaser_SetAngle()\t",
+		"ObjStLaser_GetAngle()\t",
+		"ObjStLaser_SetSource()\t",
+
+		// Item Object functions
+
+		"ObjItem_SetItemID()\t",
+		"ObjItem_SetRenderScoreEnable()\t",
+		"ObjItem_SetAutoCollectEnable()\t",
+		"ObjItem_SetDefinedMovePatternA1()\t",
+		"ObjItem_GetInfo()\t",
+
+		// Player Object functions
+
+		"ObjPlayer_AddIntersectionCircleA1()\t",
+		"ObjPlayer_ClearIntersection()\t",
+
+		// Collision Object functions
+
+		"ObjCol_IsIntersected()\t",
+		"ObjCol_GetListOfIntersectedEnemyID()\t",
+		"ObjCol_GetIntersectedCount()\t",
+
+		*/
+
+	]
+}
