@@ -312,6 +312,7 @@
 		/*"Obj_Delete(obj)\t",
 		"Obj_IsDeleted(obj)\t",
 		"Obj_SetVisible(obj, visible)\t",
+		"Obj_IsVisible(obj)\t",
 		"Obj_SetRenderPriority(obj, priority_ratio)\t",
 		"Obj_SetRenderPriorityI(obj, priority)\t",
 		"Obj_GetRenderPriority(obj)\t",
@@ -338,6 +339,7 @@
 		"ObjRender_SetScaleZ()\t",
 		"ObjRender_SetScaleXYZ()\t",
 		"ObjRender_SetColor()\t",
+		"ObjRender_SetColorHSV()\t",
 		"ObjRender_SetAlpha()\t",
 		"ObjRender_SetBlendType()\t",
 		"ObjRender_GetX()\t",
@@ -363,6 +365,7 @@
 		"ObjPrim_GetVertexCount()\t",
 		"ObjPrim_SetTexture()\t",
 		"ObjPrim_SetVertexPosition()\t",
+		"ObjPrim_GetVertexPosition()\t",
 		"ObjPrim_SetVertexUV()\t",
 		"ObjPrim_SetVertexUVT()\t",
 		"ObjPrim_SetVertexColor()\t",
@@ -422,6 +425,8 @@
 		"ObjText_GetTextLength()\t",
 		"ObjText_GetTextLengthCU()\t",
 		"ObjText_GetTextLengthCUL()\t",
+		"ObjText_GetTotalWidth()\t",
+		"ObjText_GetTotalHeight()\t",
 
 		// Sound Object functions
 
@@ -430,6 +435,7 @@
 		"ObjSound_Play()\t",
 		"ObjSound_Stop()\t",
 		"ObjSound_SetVolumeRate()\t",
+		"ObjSound_SetPanRate()\t",
 		"ObjSound_SetFade()\t",
 		"ObjSound_SetLoopEnable()\t",
 		"ObjSound_SetLoopTime()\t",
@@ -536,6 +542,7 @@
 		"ObjShot_AddShotA2()\t",
 		"ObjShot_SetIntersectionCircleA1()\t",
 		"ObjShot_SetIntersectionCircleA2()\t",
+		"ObjShot_SetIntersectionLine()\t",
 		"ObjShot_SetIntersectionEnable()\t",
 		"ObjShot_SetItemChange()\t",
 		"ObjShot_IsSpellResist()\t",
@@ -543,11 +550,13 @@
 		"ObjLaser_SetLength()\t",
 		"ObjLaser_SetRenderWidth()\t",
 		"ObjLaser_SetIntersectionWidth()\t",
+		"ObjLaser_SetGrazeInvalidFrame()\t",
 		"ObjLaser_SetInvalidLength()\t",
 		"ObjLaser_GetLength()\t",
 		"ObjStLaser_SetAngle()\t",
 		"ObjStLaser_GetAngle()\t",
 		"ObjStLaser_SetSource()\t",
+		"ObjCrLaser_SetTipDecrement()\t",
 
 		// Item Object functions
 

@@ -10,7 +10,7 @@
 	<key>name</key>
 	<string>Danmakufu</string>
 	<key>firstLineMatch</key>
-	<string>^\s*(#TouhouDanmakufu|script_|//dnh_include).*</string>
+	<string>^\s*(#TouhouDanmakufu|script_|#include).*</string>
 	<key>patterns</key>
 	<array>
 		<dict>

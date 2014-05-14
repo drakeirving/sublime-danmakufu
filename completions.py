@@ -1,22 +1,22 @@
-import sublime, sublime_plugin, string
+import sublime, sublime_plugin, string, re
 
 
-#TODO: Add defined functions to completions
+# TODO: Add defined functions to completions
 
 
 class Library():
 	def init(self):
 		self.dict = {}
-		#currently just plops right into actives
+		# currently just plops right into actives
 		self.settings = sublime.load_settings("sublime-completions-library.sublime-settings")
-		#object containing completions filenames
+		# object containing completions filenames
 		self.actives = self.settings.get("completions_file_list")
 
-		#currently only dnh
+		# currently only dnh
 		if self.actives:
 			for key in self.actives:
-				#load file contents into dictionary
-				#make sure it's a settings file
+				# load file contents into dictionary
+				# make sure it's a settings file
 				self.dict[key] = sublime.load_settings(self.actives[key])
 
 
@@ -36,7 +36,7 @@ class LibraryCollector(sublime_plugin.EventListener):
 		self.completions = []
 
 		for key in library.dict:
-			if (library.actives and library.actives.get(key)): #if dict active
+			if (library.actives and library.actives.get(key)): # if dict active
 				scope = library.dict[key].get("scope")
 				if scope and view.match_selector(locations[0], scope):
 					self.completions += library.dict[key].get("completions")
@@ -44,7 +44,7 @@ class LibraryCollector(sublime_plugin.EventListener):
 		if not self.completions:
 			return []
 
-		#extend other completions
+		# extend other completions
 		olds = [view.extract_completions(prefix)]
 		olds = [(item, item) for sublist in olds for item in sublist if len(item) > 3]
 		olds = list(set(olds))
@@ -53,24 +53,24 @@ class LibraryCollector(sublime_plugin.EventListener):
 
 def clean(completions, olds):
 	newcomp = []
-	for attr in list(completions):
-		name = attr.split("::", 1)[1].split("(", 1)[0]
+	for string in list(completions):
+		# validate and split
+		match = re.findall(r"^(\w+::)?(\w+)\((.*)\)(\t.*)?$", string)[0]
+		# [0]: namespace
+		# [1]: function name
+		# [2]: parameters
+		# [3]: return type
 
-		#remove duplicates
+		name = match[1]
+		# remove duplicates
 		if (name, name) in olds:
 			olds.remove((name, name))
 
-		#add completion string
-		name += "("
-		params = attr.split("(", 1)[1].split(")", 1)[0]
-		if len(params) > 0:
-			i = 1
-			while i <= params.count(","):
-				name += "$" + str(i) + ", "
-				i += 1
-			name += "$" + str(i)
-		name += ")$0"
-		newcomp.append(tuple([attr] + [name]))
+		# generate tab-to-params string
+		params = "(" + ", ".join(["$"+str(i) for i in list(range(1, match[2].count(",")+2))]) + ")$0"
+
+		# add to completions list
+		newcomp.append(tuple([string] + [name + params]))
 
 	newcomp.extend(olds)
 	return newcomp
