@@ -75,3 +75,22 @@ def clean(completions, olds):
 	newcomp.extend(olds)
 	return newcomp
 
+
+class DanmakufuDoc(sublime_plugin.TextCommand):
+	def run(self, edit):
+		if(not self.view.match_selector(self.view.sel()[0].begin(), 'source.danmakufu')): return
+
+		panel = self.view.window().get_output_panel('danmakufu_doc')
+		self.view.window().run_command('show_panel', {'panel': 'output.danmakufu_doc'})
+
+		panel.set_read_only(False)
+		panel.run_command('insert', {'characters': 'aaa'})
+		panel.set_read_only(True)
+
+		# hide after timeout
+		sublime.set_timeout_async(lambda: hide(panel), 5000)
+
+		def hide(panel):
+			if(bool(panel.window())):
+				panel.window().run_command('hide_panel')
+
