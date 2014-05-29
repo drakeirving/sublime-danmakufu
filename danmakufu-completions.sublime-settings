@@ -6,8 +6,8 @@
 
 		// Math functions
 
-		{ "sig": "Math::min(a, b)\treal", "doc": "" },
-		{ "sig": "Math::max(a, b)\treal", "doc": "" },
+		{ "sig": "Math::min(a, b)\treal", "doc": "Parameters:\n\t1) value 1\n\t2) value 2\nReturns the minimum of the two values." },
+		{ "sig": "Math::max(a, b)\treal", "doc": "Parameters:\n\t1) value 1\n\t2) value 2\nReturns the maximum of the two values." },
 		{ "sig": "Math::log(a)\treal", "doc": "" },
 		{ "sig": "Math::log10(a)\treal", "doc": "" },
 		{ "sig": "Math::cos(angle)\treal", "doc": "" },
