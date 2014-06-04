@@ -73,7 +73,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>==|!=|&lt;=|&rt;=|&lt;|&rt;|\|\||&amp;&amp;|~</string>
+			<string>==|!=|&lt;=|&rt;=|&lt;|&rt;|\|\||&amp;&amp;|~|!</string>
 			<key>name</key>
 			<string>keyword.operator.logical.danmakufu</string>
 		</dict>
@@ -110,19 +110,6 @@
 			<string>^@(Initialize|Loading|Event|MainLoop|Finalize)\b</string>
 			<key>name</key>
 			<string>entity.name.function.predefined.danmakufu</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(min|max|
-				log|log10|cos|sin|tan|acos|asin|atan|atan2|rand|round|truncate|ceil|floor|absolute|modc|InstallFont|ToString|IntToString|itoa|rtoa|rtos|vtos|atoi|ator|TrimString|SplitString)\(</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>support.function.library.danmakufu</string>
-				</dict>
-			</dict>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -174,6 +161,18 @@
 				</dict>
 			</array>
 		</dict>
+		<!-- <dict>
+			<key>match</key>
+			<string>\b(put|functions|here)\(</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>support.function.library.danmakufu</string>
+				</dict>
+			</dict>
+		</dict> -->
 	</array>
 	<key>scopeName</key>
 	<string>source.danmakufu</string>

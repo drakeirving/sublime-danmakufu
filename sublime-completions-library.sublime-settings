@@ -1,6 +1,6 @@
 {
-	"completions_file_list": {
-		"danmakufu": "danmakufu-completions.sublime-settings"
-	}
+	"completions_file_list": [
+		"danmakufu-completions.sublime-settings"
+	]
 
 }
