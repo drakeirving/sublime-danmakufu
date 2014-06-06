@@ -1,0 +1,3 @@
+[
+	{ "keys": ["ctrl+super+d"], "command": "get_function_docs" }
+]

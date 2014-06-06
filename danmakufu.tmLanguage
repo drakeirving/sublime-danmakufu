@@ -107,7 +107,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>^@(Initialize|Loading|Event|MainLoop|Finalize)\b</string>
+			<string>^\s*@(Initialize|Loading|Event|MainLoop|Finalize)\b</string>
 			<key>name</key>
 			<string>entity.name.function.predefined.danmakufu</string>
 		</dict>

@@ -105,7 +105,7 @@ class GetFunctionDocs(sublime_plugin.TextCommand):
 		name = self.view.substr(self.view.word(location))
 
 		# valid if existing function name
-		if not self.dict and self.dict[name]:
+		if not self.dict or name not in self.dict:
 			return
 
 		run_function_docs_panel(self.view, name, self.dict)
