@@ -28,7 +28,7 @@ Designed for easy addition of support for arbitrary languages and enabling of fu
 
 * Install Package Control: https://sublime.wbond.net/installation and restart Sublime Text.
 
-* Preferences → Package Control → Install Package → Danmakufu
+* Preferences → Package Control → Install Package → Danmakufu, and restart again.
 
 ### Extensibility ###
 
