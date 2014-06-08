@@ -49,6 +49,3 @@ Example:
 
 }
 ```
-
-### License ###
-what license

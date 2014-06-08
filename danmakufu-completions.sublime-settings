@@ -575,7 +575,9 @@
 
 		{ "sig": "ObjCol_IsIntersected(obj)\tbool", "doc": "" },
 		{ "sig": "ObjCol_GetListOfIntersectedEnemyID(obj)\tobj[]", "doc": "" },
-		{ "sig": "ObjCol_GetIntersectedCount(obj)\treal", "doc": "" },
+		{ "sig": "ObjCol_GetIntersectedCount(obj)\treal", "doc": "" }
 
+
+		// Note: Must not have trailing comma for ST2 compatibility
 	]
 }

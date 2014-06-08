@@ -32,14 +32,15 @@ def dictionaryize(settings):
 	# [3]: parameters
 	# [4]: return type
 
-	for entry in temp_dict:
-		# extract function name and use as key
-		match = regex.search(entry["sig"])
-		if match: 
-			name = match.group(2)
-			d["dict"][name] = entry
-			d["dict"][name]["num_params"] = 0 if (match.group(3) == "") else match.group(3).count(",") + 1
-			keys.append(name)
+	if temp_dict:
+		for entry in temp_dict:
+			# extract function name and use as key
+			match = regex.search(entry["sig"])
+			if match: 
+				name = match.group(2)
+				d["dict"][name] = entry
+				d["dict"][name]["num_params"] = 0 if (match.group(3) == "") else match.group(3).count(",") + 1
+				keys.append(name)
 
 	return (d, keys)
 
@@ -108,9 +109,9 @@ class GetFunctionDocs(sublime_plugin.TextCommand):
 		if not self.dict or name not in self.dict:
 			return
 
-		run_function_docs_panel(self.view, name, self.dict)
+		run_function_docs_panel(self.view, edit, name, self.dict)
 		
-def run_function_docs_panel(view, name, dict):
+def run_function_docs_panel(view, edit, name, dict):
 
 	doc = dict[name]["doc"]
 
@@ -125,7 +126,7 @@ def run_function_docs_panel(view, name, dict):
 
 	panel.set_read_only(False)
 	panel.settings().set("auto_indent", False) # required for docstring to not screw up
-	panel.run_command("insert", {"characters": doc})
+	panel.insert(edit, 0, doc)
 	panel.set_read_only(True)
 
 	# identify current docs panel by the function it describes
