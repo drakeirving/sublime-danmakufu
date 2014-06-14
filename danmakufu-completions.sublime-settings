@@ -28,17 +28,17 @@
 
 		// String functions
 
-		{ "sig": "String::InstallFont(path)\tbool", "doc": "" },
-		{ "sig": "String::ToString(a)\tchar", "doc": "" },
-		{ "sig": "String::IntToString(num)\tchar", "doc": "" },
-		{ "sig": "String::itoa(num)\tchar", "doc": "" },
-		{ "sig": "String::rtoa(num)\tchar", "doc": "" },
-		{ "sig": "String::rtos(format, num)\tchar", "doc": "" },
-		{ "sig": "String::vtos(format, num)\tchar", "doc": "" },
-		{ "sig": "String::atoi(str)\treal", "doc": "" },
-		{ "sig": "String::ator(str)\treal", "doc": "" },
-		{ "sig": "String::TrimString(str)\tchar", "doc": "" },
-		{ "sig": "String::SplitString(str, delimiter)\tchar[]", "doc": "" },
+		{ "sig": "String::InstallFont(path)\tbool", "doc": "Parameters:\n\t1) path to font\nLoads the given font, which can be used with ObjText_SetFontType, allowing for usage of fonts that are not standard to Windows.[r]Returns true if successful." },
+		{ "sig": "String::ToString(a)\tchar", "doc": "Parameters:\n\t1) value\nReturns the value as a string, able to be used by text functions." },
+		{ "sig": "String::IntToString(num)\tchar", "doc": "Parameters:\n\t1) value\nReturns the value as a string. Omits any decimal places." },
+		{ "sig": "String::itoa(num)\tchar", "doc": "Parameters:\n\t1) value\nConverts an integer value to an array form, but leaves out decimal places." },
+		{ "sig": "String::rtoa(num)\tchar", "doc": "Parameters:\n\t1) value\nConverts any real number to an array format." },
+		{ "sig": "String::rtos(format, num)\tchar", "doc": "Parameters:\n\t1) format\n\t2) value\nReturns the value as a string, with some filtering options.\nThe format is presented as a string that determines how many digits will be shown; it can contain any combination of the following three characters: 0, ., #.\n0 is a slot for a digit. . represents the decimal place in the string. # creates a space in the string." },
+		{ "sig": "String::vtos(format, num)\tchar", "doc": "Parameters:\n\t1) format\n\t2) value" },
+		{ "sig": "String::atoi(str)\treal", "doc": "Parameters:\n\t1) value\nTakes the contents of an array and converts it into an integer." },
+		{ "sig": "String::ator(str)\treal", "doc": "Parameters:\n\t1) value\nTakes the contents of an array and converts it into a real number." },
+		{ "sig": "String::TrimString(str)\tchar", "doc": "Parameters:\n\t1) String\nReturns the string with spaces removed from the beginning and ending of the text." },
+		{ "sig": "String::SplitString(str, delimiter)\tchar[]", "doc": "Parameters:\n\t1) Original String\n\t2) delimiter\nReturns an array containing the split strings." },
 
 		// Path functions
 
