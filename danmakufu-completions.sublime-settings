@@ -53,11 +53,11 @@
 
 		// Time functions
 
-		{ "sig": "Time::GetCurrentDateTimeS()\tchar", "doc": "" },
-		{ "sig": "Time::GetStageTime()\treal", "doc": "" },
-		{ "sig": "Time::GetPackageTime()\treal", "doc": "" },
-		{ "sig": "Time::GetCurrentFps()\treal", "doc": "" },
-		{ "sig": "Time::GetReplayFps()\treal", "doc": "" },
+		{ "sig": "Time::GetCurrentDateTimeS()\tchar", "doc": "Returns a string containing the current date and time.\nFor example, if the current date is 2012/09/16 12:34:56, then 20120916123456 will be returned." },
+		{ "sig": "Time::GetStageTime()\treal", "doc": "Returns a number with the amount of time that has been elapsed since the start of the main script.\nThe value is in milliseconds." },
+		{ "sig": "Time::GetPackageTime()\treal", "doc": "Returns a number with the amount of time that has been elapsed since the start of the package script.\nThe value is in milliseconds." },
+		{ "sig": "Time::GetCurrentFps()\treal", "doc": "Returns the current FPS." },
+		{ "sig": "Time::GetReplayFps()\treal", "doc": "Returns the FPS of the replay at the current time.\nNote that this value refreshes as a much slower rate than GetCurrentFps." },
 
 		// Debug functions
 
