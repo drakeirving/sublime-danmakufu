@@ -61,8 +61,8 @@
 
 		// Debug functions
 
-		{ "sig": "Debug::WriteLog(string)\tvoid", "doc": "" },
-		{ "sig": "Debug::RaiseError(string)\tvoid", "doc": "" },
+		{ "sig": "Debug::WriteLog(string)\tvoid", "doc": "Parameters:\n\t1) String\nOutputs the given string to log." },
+		{ "sig": "Debug::RaiseError(string)\tvoid", "doc": "Parameters:\n\t1) String\nCreates an error box with the specified string.\nExecution of the script is stopped, closing the script." },
 
 		// Common Data functions
 		{ "sig": "CommonData::SetCommonData(key, value)\tvoid", "doc": "" },
