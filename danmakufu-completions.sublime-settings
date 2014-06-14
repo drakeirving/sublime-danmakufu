@@ -87,11 +87,11 @@
 
 		// Audio functions
 
-		{ "sig": "Audio::LoadSound(path)\tvoid", "doc": "" },
-		{ "sig": "Audio::RemoveSound(path)\tvoid", "doc": "" },
-		{ "sig": "Audio::PlayBGM(path, loop_start, loop_end)\tvoid", "doc": "" },
-		{ "sig": "Audio::PlaySE(path)\tvoid", "doc": "" },
-		{ "sig": "Audio::StopSound(path)\tvoid", "doc": "" },
+		{ "sig": "Audio::LoadSound(path)\tvoid", "doc": "Parameters:\n\t1) path\nLoads specified sound file." },
+		{ "sig": "Audio::RemoveSound(path)\tvoid", "doc": "Parameters:\n\t1) path\nRemoves specified sound file." },
+		{ "sig": "Audio::PlayBGM(path, loop_start, loop_end)\tvoid", "doc": "Parameters:\n\t1) path\n\t2) loop start second (real)\n\t3) loop end second (real)\nPlays the specified sound file as a looping BGM.\nYou can be more precise by using decimals (for instance, if you want to loop from 2.5 seconds on, you can type 2.5)." },
+		{ "sig": "Audio::PlaySE(path)\tvoid", "doc": "Parameters:\n\t1) path\nPlays specified sound file as a sound effect." },
+		{ "sig": "Audio::StopSound(path)\tvoid", "doc": "Parameters:\n\t1) path\nStops specified sound file." },
 
 		//Input functions
 
