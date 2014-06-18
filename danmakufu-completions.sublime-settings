@@ -431,20 +431,20 @@
 
 		// Sound Object functions
 
-		{ "sig": "ObjSound_Create()\tobj", "doc": "" },
-		{ "sig": "ObjSound_Load(obj, path)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_Play(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_Stop(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetVolumeRate(obj, volume)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetPanRate(obj, pan)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetFade(obj, fade_rate)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetLoopEnable(obj, enable)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetLoopTime(obj, start, end)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetLoopSampleCount(obj, start, end)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetRestartEnable(obj, enable)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_SetSoundDivision(obj, sound_type)\tvoid", "doc": "" },
-		{ "sig": "ObjSound_IsPlaying(obj)\tbool", "doc": "" },
-		{ "sig": "ObjSound_GetVolumeRate(obj)\treal", "doc": "" },
+		{ "sig": "ObjSound_Create()\tobj", "doc": "Creates and returns a sound object." },
+		{ "sig": "ObjSound_Load(obj, path)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) path\nLoads the specified sound file." },
+		{ "sig": "ObjSound_Play(obj)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\nPlays the sound file associated to the object." },
+		{ "sig": "ObjSound_Stop(obj)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\nStops the sound file associated to the object." },
+		{ "sig": "ObjSound_SetVolumeRate(obj, volume)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) volume (real)\nSets the volume of the sound object (0-100)." },
+		{ "sig": "ObjSound_SetPanRate(obj, pan)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n]t2) volume (real)\nSets the pan volume of the sound object (-100-100).\n0 is neutral, -100 is left-side only, 100 is right-side only." },
+		{ "sig": "ObjSound_SetFade(obj, fade_rate)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) fade (real)\nSets the fade time of the sound object." },
+		{ "sig": "ObjSound_SetLoopEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) loop (boolean)\nWhen set to true, the sound will loop." },
+		{ "sig": "ObjSound_SetLoopTime(obj, start, end)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) loop start (real)\n\t3) loop end (real)\nSets the timing of the loop, in seconds." },
+		{ "sig": "ObjSound_SetLoopSampleCount(obj, start, end)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) loop sample start (real)\n\t3) loop sample end (real)\nSets the timing of the loop based on the sample count." },
+		{ "sig": "ObjSound_SetRestartEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) restart (boolean)\nWhen set to true, allows the sound object to be restarted rather than continuing from where it left off." },
+		{ "sig": "ObjSound_SetSoundDivision(obj, sound_type)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) sound division (SOUND_BGM, SOUND_SE)\nSpecifies whether a sound is a BGM or a sound effect:" },
+		{ "sig": "ObjSound_IsPlaying(obj)\tbool", "doc": "Parameters:\n\t1) Object ID (real)\nReturns true if the sound file is playing." },
+		{ "sig": "ObjSound_GetVolumeRate(obj)\treal", "doc": "Parameters:\n\t1) Object ID (real)\nReturns the volume (0-100) of the sound file." },
 
 		// File Object functions
 
