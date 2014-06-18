@@ -569,8 +569,8 @@
 
 		// Player Object functions
 
-		{ "sig": "ObjPlayer_AddIntersectionCircleA1(obj, off_x, off_y, hit_r, graze_r)\tvoid", "doc": "" },
-		{ "sig": "ObjPlayer_ClearIntersection(obj)\tvoid", "doc": "" },
+		{ "sig": "ObjPlayer_AddIntersectionCircleA1(obj, off_x, off_y, hit_r, graze_r)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) hitbox x-coordinate (away from the player) (real)\n\t3) hitbox y-coordinate (away from the player) (real)\n\t4) hitbox radius (real)\n\t5) graze radius (real)\nSets the hitbox position and radius, as well as the graze radius." },
+		{ "sig": "ObjPlayer_ClearIntersection(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nDeletes the player hitbox." },
 
 		// Collision Object functions
 
