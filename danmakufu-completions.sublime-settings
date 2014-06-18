@@ -310,20 +310,20 @@
 
 		// Generic Object functions
 
-		{ "sig": "Obj_Delete(obj)\tvoid", "doc": "" },
-		{ "sig": "Obj_IsDeleted(obj)\tbool", "doc": "" },
-		{ "sig": "Obj_SetVisible(obj, visible)\tvoid", "doc": "" },
-		{ "sig": "Obj_IsVisible(obj)\tbool", "doc": "" },
-		{ "sig": "Obj_SetRenderPriority(obj, priority_ratio)\tvoid", "doc": "" },
-		{ "sig": "Obj_SetRenderPriorityI(obj, priority)\tvoid", "doc": "" },
-		{ "sig": "Obj_GetRenderPriority(obj)\treal", "doc": "" },
-		{ "sig": "Obj_GetRenderPriorityI(obj)\treal", "doc": "" },
-		{ "sig": "Obj_GetValue(obj, key)\tfree", "doc": "" },
-		{ "sig": "Obj_GetValueD(obj, key, default)\tfree", "doc": "" },
-		{ "sig": "Obj_SetValue(obj, key, value)\tvoid", "doc": "" },
-		{ "sig": "Obj_DeleteValue(obj, key)\tvoid", "doc": "" },
-		{ "sig": "Obj_IsValueExists(obj, key)\tbool", "doc": "" },
-		{ "sig": "Obj_GetType(obj)\tconstant", "doc": "" },
+		{ "sig": "Obj_Delete(obj)\tvoid", "doc": "Parameters:\n\t1) object ID\nDeletes specified object." },
+		{ "sig": "Obj_IsDeleted(obj)\tbool", "doc": "Parameters:\n\t1) object ID\nReturns true if the specified object has been deleted." },
+		{ "sig": "Obj_SetVisible(obj, visible)\tvoid", "doc": "Parameters:\n\t1) object ID\n\t2) visible (bool)\nSets visibility of specified object.\nIf visible is set to false, the object will not be drawn." },
+		{ "sig": "Obj_IsVisible(obj)\tbool", "doc": "Parameters:\n\t1) object ID\nReturns true if the specified object is visible." },
+		{ "sig": "Obj_SetRenderPriority(obj, priority_ratio)\tvoid", "doc": "Parameters:\n\t1) object ID\n\t2) render priority (0.0-1.0)\nSets the object's render priority as a ratio (0.0-1.0)." },
+		{ "sig": "Obj_SetRenderPriorityI(obj, priority)\tvoid", "doc": "Parameters:\n\t1) object ID\n\t2) render priority (0-100)\nSets the object's render priority in the range 0-100 (integer)." },
+		{ "sig": "Obj_GetRenderPriority(obj)\treal", "doc": "Parameters:\n\t1) object ID\nReturns the object's render priority as a ratio (0.0-1.0)." },
+		{ "sig": "Obj_GetRenderPriorityI(obj)\treal", "doc": "Parameters:\n\t1) object ID\nReturns the object's render priority as an integer (0-100)." },
+		{ "sig": "Obj_GetValue(obj, key)\tfree", "doc": "Parameters:\n\t1) object ID\n\t2) key (char)\nReturns the value associated with the given key for the given object, previously set by Obj_SetValue().\nWarning: If the key-value pair does not exist or was deleted, attempting to access it will crash the program." },
+		{ "sig": "Obj_GetValueD(obj, key, default)\tfree", "doc": "Parameters:\n\t1) object ID\n\t2) key (char)\n\t3) default value (arbitrary type)\nReturns the value associated with the given key for the given object, previously set by Obj_SetValue().\nIf the key-value pair doesn't exist, the default value is returned instead." },
+		{ "sig": "Obj_SetValue(obj, key, value)\tvoid", "doc": "Parameters:\n\t1) object ID\n\t2) key (char)\n\t3) value (arbitrary type)\nFor the given object, maps the given key to the given value.\nThe value can be returned by using Obj_GetValue() with the corresponding key." },
+		{ "sig": "Obj_DeleteValue(obj, key)\tvoid", "doc": "Parameters:\n\t1) object ID\n\t2) key (char)\nDeletes the key-value pair previously set by Obj_SetValue()." },
+		{ "sig": "Obj_IsValueExists(obj, key)\tbool", "doc": "Parameters:\n\t1) object ID\n\t2) key (char)\nChecks whether the object has a key-value pair for the given key and returns true if it does." },
+		{ "sig": "Obj_GetType(obj)\tconstant", "doc": "Parameters:\n\t1) object ID\nReturns the type of object." },
 
 		// Render Object functions
 
