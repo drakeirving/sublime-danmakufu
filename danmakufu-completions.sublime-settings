@@ -95,16 +95,16 @@
 
 		//Input functions
 
-		{ "sig": "Input::GetVirtualKeyState(key)\tconstant", "doc": "" },
-		{ "sig": "Input::SetVirtualKeyState(key, state)\tvoid", "doc": "" },
-		{ "sig": "Input::AddVirtualKey(v_key, key, pad_key)\tvoid", "doc": "" },
-		{ "sig": "Input::AddReplayTargetVirtualKey(key)\tvoid", "doc": "" },
-		{ "sig": "Input::GetKeyState(key)\tconstant", "doc": "" },
-		{ "sig": "Input::GetMouseState(button)\tconstant", "doc": "" },
-		{ "sig": "Input::GetMouseX()\treal", "doc": "" },
-		{ "sig": "Input::GetMouseY()\treal", "doc": "" },
-		{ "sig": "Input::GetMouseMoveZ()\treal", "doc": "" },
-		{ "sig": "Input::SetSkipModeKey(key)\tvoid", "doc": "" },
+		{ "sig": "Input::GetVirtualKeyState(key)\tconstant", "doc": "Parameters:\n\t1) Virtual Key name\nReturns the state of the specified virtual key." },
+		{ "sig": "Input::SetVirtualKeyState(key, state)\tvoid", "doc": "Parameters:\n\t1) Virtual Key name\n\t2) Virtual Key state\nSets the given virtual key to the given state.\nThe virtual key will be restored to its true state a frame after you stop calling this function.\nKeep in mind that if you set it to KEY_HOLD it will not go to KEY_PULL or KEY_PUSH." },
+		{ "sig": "Input::AddVirtualKey(v_key, key, pad_key)\tvoid", "doc": "Parameters:\n\t1) Virtual Key name\n\t2) Key name\n\t3) Pad Key (KEY_INVALID if no pad input wanted)\nRegisters the given virtual key with the given key.\nYou may map any number of virtual keys to a single key, but virtual keys may only be mapped to a single key." },
+		{ "sig": "Input::AddReplayTargetVirtualKey(key)\tvoid", "doc": "Parameters:\n\t1) Key name\nRegisters the given key id to the replay file.\nThis key id should be one that you have already registered with AddVirtualKey." },
+		{ "sig": "Input::GetKeyState(key)\tconstant", "doc": "Parameters:\n\t1) Key name\nReturns the given key id's current state." },
+		{ "sig": "Input::GetMouseState(button)\tconstant", "doc": "Parameters:\n\t1) Mouse button (MOUSE_LEFT, MOUSE_MIDDLE, MOUSE_RIGHT)\nReturns the given mouse button's current state." },
+		{ "sig": "Input::GetMouseX()\treal", "doc": "Returns the mouse's X coordinate.\nThe origin for the mouse coordinates is the upper left of the Danmakufu window (0, 0)." },
+		{ "sig": "Input::GetMouseY()\treal", "doc": "Returns the mouse's Y coordinate.\nThe origin for the mouse coordinates is the upper left of the Danmakufu window (0, 0)." },
+		{ "sig": "Input::GetMouseMoveZ()\treal", "doc": "Returns the amount of change that has occurred to the mouse's Z axis.\nThe Z axis is normally the middle mouse wheel. If there is no mouse wheel, the value will be 0.\nThe value returned will be negative if the wheel was moved back, and positive if the wheel moved forward." },
+		{ "sig": "Input::SetSkipModeKey(key)\tvoid", "doc": "Parameters:\n\t1) Key to be used for fast playback mode\nSpecifies the key to use for fast playback mode.\nThe default key is KEY_LCONTROL." },
 
 		//Render functions
 
