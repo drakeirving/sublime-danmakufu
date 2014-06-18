@@ -10,21 +10,21 @@
 		{ "sig": "Math::max(a, b)\treal", "doc": "Parameters:\n\t1) value 1\n\t2) value 2\nReturns the maximum of the two values." },
 		{ "sig": "Math::log(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the natural log (base e) of the value" },
 		{ "sig": "Math::log10(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the common log (base 10) of the value" },
-		{ "sig": "Math::cos(angle)\treal", "doc": "Parameters:\n\t1) value\nReturns the cosine of the angle. Cosine is a value between -1 and 1 that corresponds to the x-value in a coordinate plane." },
-		{ "sig": "Math::sin(angle)\treal", "doc": "Parameters:\n\t1) value\nReturns the sine of the angle. Sine is a value between -1 and 1 that corresponds to the y-value in a coordinate plane." },
-		{ "sig": "Math::tan(angle)\treal", "doc": "Parameters:\n\t1) value\nReturns the tangent of the angle. Tangent is the slope of the line created by the angle (x/y)." },
-		{ "sig": "Math::acos(x)\treal", "doc": "Parameters:\n\t1) value\nReturns the arccosine of the angle. acos(cos(x)) = x, if x is between 0 and 180." },
-		{ "sig": "Math::asin(y)\treal", "doc": "Parameters:\n\t1) value\nReturns the arcsine of the value. asin(sin(x)) = x, if x is between -90 and 90." },
-		{ "sig": "Math::atan(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the arctangent of the value. atan(tan(x)) = x, if x is between -90 and 90." },
-		{ "sig": "Math::atan2(y, x)\treal", "doc": "Parameters:\n\t1) y value\n\t2) x value\nReturns the arctangent of y/x, which is the angle from (0, 0) to (x, y). The angle will be in the range -180 < a <= 180, where a is the returned value.\nUseful for getting the angle from one point to another point. For example, the angle from the boss to the player is atan2(player y - boss y, player x - boss x)." },
-		{ "sig": "Math::rand(min, max)\treal", "doc": "Parameters:\n\t1) min value\n\t2) max value\nReturns a random value between the two values.\nNote that the random value is not an integer; if you need one, use either round(), ceil(), or floor() on the returned value." },
+		{ "sig": "Math::cos(angle)\treal", "doc": "Parameters:\n\t1) value\nReturns the cosine of the angle.\nThe cosine of an angle is a value between -1 and 1 that corresponds to the x-coordinate of the angle on the unit circle." },
+		{ "sig": "Math::sin(angle)\treal", "doc": "Parameters:\n\t1) value\nReturns the sine of the angle.\nThe sine of an angle is a value between -1 and 1 that corresponds to the y-coordinate of the angle on the unit circle." },
+		{ "sig": "Math::tan(angle)\treal", "doc": "Parameters:\n\t1) value\nReturns the tangent of the angle.\ntan(x) = sin(x)/cos(x). The tangent of an angle in a right triangle is the ratio of the opposite and adjacent side lengths." },
+		{ "sig": "Math::acos(x)\treal", "doc": "Parameters:\n\t1) value\nReturns the arccosine of the value.\nacos(cos(x)) = x, if x is between 0 and 180." },
+		{ "sig": "Math::asin(y)\treal", "doc": "Parameters:\n\t1) value\nReturns the arcsine of the value.\nasin(sin(x)) = x, if x is between -90 and 90." },
+		{ "sig": "Math::atan(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the arctangent of the value.\natan(tan(x)) = x, if x is between -90 and 90." },
+		{ "sig": "Math::atan2(y, x)\treal", "doc": "Parameters:\n\t1) y value\n\t2) x value\nReturns the arctangent of y/x, which can be seen as the angle from (0, 0) to (x, y). The angle will be in the range -180 < a <= 180, where a is the returned value.\nUseful for getting the angle from one point to another point. For example, the angle from the boss to the player is atan2(player_y - boss_y, player_x - boss_x)." },
+		{ "sig": "Math::rand(min, max)\treal", "doc": "Parameters:\n\t1) min value\n\t2) max value\nReturns a random number between min and max.\nNote that the random value is a real number, not an integer; if you need one, use either round(), ceil(), or floor() on the returned value." },
 		{ "sig": "Math::round(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the value as an integer. Values of 0.5 or greater are rounded up; otherwise they are rounded down." },
 		{ "sig": "Math::truncate(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the value with no decimal places. For instance, 1.123 becomes 1." },
 		{ "sig": "Math::trunc(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the value with no decimal places. For instance, 1.123 becomes 1." },
 		{ "sig": "Math::ceil(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the value rounded up to the next integer." },
 		{ "sig": "Math::floor(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the value rounded down to the next integer." },
 		{ "sig": "Math::absolute(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the value as an absolute number (if it is negative, it will be changed to a positive)." },
-		{ "sig": "Math::modc(a, mod)\treal", "doc": "Parameters:\n\t1) value\n\t2) value to mod by\nReturns a modulus of the first value.\nModulus provides the remainder of the division (7 modulo 5 would be 2)." },
+		{ "sig": "Math::modc(a, mod)\treal", "doc": "Parameters:\n\t1) value\n\t2) divisor\nReturns the value, modulo the divisor.\nModulus provides the remainder of the division (7 modulo 5 would be 2)." },
 
 		// String functions
 
@@ -342,7 +342,7 @@
 		{ "sig": "ObjRender_SetColor(obj, r, g, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) R (real)\n\t3) G (real)\n\t4) B (real)\nSets the color of the object using RGB (0-255)." },
 		{ "sig": "ObjRender_SetColorHSV(obj, h, s, v)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) Hue (real)\n\t3) Saturation (real)\n\t4) Value (real)\nSets the Hue (0-359), Saturation (0-255), and Value (0-255) of an object." },
 		{ "sig": "ObjRender_SetAlpha(obj, alpha)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) alpha (real)\nSets the alpha value of the object. A value of 0 will make the object invisible. A value of 255 will give the object full opacity. Alpha blend type must be used for this to work." },
-		{ "sig": "ObjRender_SetBlendType(obj, blend_type)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) blend type (real)\nSets the blend type for the specified object. Available blend types are:\nBLEND_ALPHA, BLEND_ADD_RGB, BLEND_MULTIPLY, BLEND_SUBTRACT, BLEND_ADD_ARGB, BLEND_INV_DESTRGB" },
+		{ "sig": "ObjRender_SetBlendType(obj, blend_type)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) blend type (real)\nSets the blend type for the specified object. Available blend types are:\n\tBLEND_ALPHA\n\tBLEND_ADD_RGB\n\tBLEND_MULTIPLY\n\tBLEND_SUBTRACT\n\tBLEND_ADD_ARGB\n\tBLEND_INV_DESTRGB" },
 		{ "sig": "ObjRender_GetX(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the x-coordinate of the object." },
 		{ "sig": "ObjRender_GetY(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the y-coordinate of the object." },
 		{ "sig": "ObjRender_GetZ(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the z-coordinate of the object." },
@@ -352,7 +352,7 @@
 		{ "sig": "ObjRender_GetScaleX(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the x-scale of the object." },
 		{ "sig": "ObjRender_GetScaleY(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the y-scale of the object." },
 		{ "sig": "ObjRender_GetScaleZ(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the z-scale of the object." },
-		{ "sig": "ObjRender_GetBlendType(obj)\tconstant", "doc": "Parameters:\n\t1) object ID (real)\nReturns the blend type for the specified object. Available blend types are:\nBLEND_ALPHA, BLEND_ADD_RGB, BLEND_MULTIPLY, BLEND_SUBTRACT, BLEND_ADD_ARGB, BLEND_INV_DESTRGB" },
+		{ "sig": "ObjRender_GetBlendType(obj)\tconstant", "doc": "Parameters:\n\t1) object ID (real)\nReturns the blend type for the specified object. Available blend types are:\n\tBLEND_ALPHA\n\tBLEND_ADD_RGB\n\tBLEND_MULTIPLY\n\tBLEND_SUBTRACT\n\tBLEND_ADD_ARGB\n\tBLEND_INV_DESTRGB" },
 		{ "sig": "ObjRender_SetZWrite(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) bool\nAllows or prevents the object from writing in the Z-buffer." },
 		{ "sig": "ObjRender_SetZTest(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) bool\nSets whether or not the object uses the Z-buffer." },
 		{ "sig": "ObjRender_SetFogEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) bool\nAllows or prevents the object from being affected by the fog. Defaults to true." },
@@ -360,48 +360,48 @@
 
 		// Primitive Object functions
 
-		{ "sig": "ObjPrim_Create(obj_type)\tobj", "doc": "" },
-		{ "sig": "ObjPrim_SetPrimitiveType(prim_type)\tvoid", "doc": "" },
-		{ "sig": "ObjPrim_SetVertexCount(obj, vertices)\tvoid", "doc": "" },
-		{ "sig": "ObjPrim_GetVertexCount(obj)\treal", "doc": "" },
-		{ "sig": "ObjPrim_SetTexture(obj, path)\tvoid", "doc": "" },
-		{ "sig": "ObjPrim_SetVertexPosition(obj, i, x, y, z)\tvoid", "doc": "" },
-		{ "sig": "ObjPrim_GetVertexPosition(obj, i)\treal[]", "doc": "" },
-		{ "sig": "ObjPrim_SetVertexUV(obj, i, x_frac, y_frac)\tvoid", "doc": "" },
-		{ "sig": "ObjPrim_SetVertexUVT(obj, i, x, y)\tvoid", "doc": "" },
-		{ "sig": "ObjPrim_SetVertexColor(obj, i, r, g, b)\tvoid", "doc": "" },
-		{ "sig": "ObjPrim_SetVertexAlpha(obj, i, alpha)\tvoid", "doc": "" },
+		{ "sig": "ObjPrim_Create(obj_type)\tobj", "doc": "Parameters:\n\t1) object type (real)\nCreates a Primitive object and returns its ID. Object types are:\n\tOBJ_PRIMITIVE_2D: primitive (triangles) in the 2D space\n\tOBJ_SPRITE_2D: rectangle in the 2D space (usable by the ObjSprite2D_ functions)\n\tOBJ_SPRITE_LIST_2D: list of rectangles in the 2D space (usable by the ObjSpriteList2D_ functions)\n\tOBJ_PRIMITIVE_3D: primitive (triangles) in the 3D space\n\tOBJ_SPRITE_3D: rectangle in the 3D space (usable by the ObjSprite3D_ functions)." },
+		{ "sig": "ObjPrim_SetPrimitiveType(prim_type)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) primitive type (real)\nSets the vertex layout for the object among the following:\n\tPRIMITIVE_TRIANGLELIST\n\tPRIMITIVE_TRIANGLESTRIP\n\tPRIMITIVE_TRIANGLEFAN" },
+		{ "sig": "ObjPrim_SetVertexCount(obj, vertices)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) number of vertices (real)\nSets the number of vertices the object contains." },
+		{ "sig": "ObjPrim_GetVertexCount(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the number of vertices the object contains." },
+		{ "sig": "ObjPrim_SetTexture(obj, path)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) path of the texture file (char)\nSets the specified texture on the object. Loads the texture file if it has not already been loaded." },
+		{ "sig": "ObjPrim_SetVertexPosition(obj, i, x, y, z)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) vertex index (real)\n\t3) x-coordinate (real)\n\t4) y-coordinate (real)\n\t5) z-coordinate (real)\nSets the position of the specified vertex." },
+		{ "sig": "ObjPrim_GetVertexPosition(obj, i)\treal[]", "doc": "Parameters:\n\t1) object ID (real)\n\t2) vertex index (real)\nReturns the position of the specified vertex in an array [x,y,z]." },
+		{ "sig": "ObjPrim_SetVertexUV(obj, i, x_frac, y_frac)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) vertex index (real)\n\t3) texture x-coordinate (real)\n\t4) texture y-coordinate (real)\nSets the UV-coordinates for the specified vertex. The value for the coordinates must be in the range (0.0-1.0).\nFor instance, if you want a vertex to be at the center-top of a 512*512 texture, you have to set x to 0.5 and y to 1.0.\nAs it may be troublesome to convert pixels into a 0.0-1.0 value, ObjPrim_SetVertexUVT is recommended." },
+		{ "sig": "ObjPrim_SetVertexUVT(obj, i, x, y)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) vertex index (real)\n\t3) texture x-coordinate (real)\n\t4) texture y-coordinate (real)\nSets the UV-coordinates for the specified vertex. You must set the object's texture using ObjPrim_SetTexture beforehand." },
+		{ "sig": "ObjPrim_SetVertexColor(obj, i, r, g, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) vertex index (real)\n\t3) R (real)\n\t4) G (real)\n\t5) B (real)\nSets the color of the specified vertex (0-255)." },
+		{ "sig": "ObjPrim_SetVertexAlpha(obj, i, alpha)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) vertex index (real)\n\t3) alpha value (real)\nSets the alpha value of the specified vertex (0-255)." },
 
 		// 2D Sprite Object functions
 
-		{ "sig": "ObjSprite2D_SetSourceRect(obj, l, t, r, b)\tvoid", "doc": "" },
-		{ "sig": "ObjSprite2D_SetDestRect(obj, l, t, r, b)\tvoid", "doc": "" },
-		{ "sig": "ObjSprite2D_SetDestCenter(obj)\tvoid", "doc": "" },
+		{ "sig": "ObjSprite2D_SetSourceRect(obj, l, t, r, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) texture coordinate (left) (real)\n\t3) texture coordinate (top) (real)\n\t4) texture coordinate (right) (real)\n\t5) texture coordinate (bottom) (real)\nSets the texture rectangle for the sprite. This is the rectangle on the original texture from which the sprite will be drawn." },
+		{ "sig": "ObjSprite2D_SetDestRect(obj, l, t, r, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) left (real)\n\t3) top (real)\n\t4) right (real)\n\t5) bottom (real)\nSets the drawing rectangle for the sprite. This is the rectangle where the sprite will be drawn." },
+		{ "sig": "ObjSprite2D_SetDestCenter(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nSets the drawing rectangle for the sprite by mapping the center of the source rectangle to (0, 0).\nFor instance, if the rectangle set with ObjSprite2D_SetSourceRect is (24, 32, 48, 46) (which is 24 wide and 14 high), the destination rectangle becomes (-12, -7, 12, 7)." },
 
 		// 2D Sprite List Object functions
 
-		{ "sig": "ObjSpriteList2D_SetSourceRect(obj, l, t, r, b)\tvoid", "doc": "" },
-		{ "sig": "ObjSpriteList2D_SetDestRect(obj, l, t, r, b)\tvoid", "doc": "" },
-		{ "sig": "ObjSpriteList2D_SetDestCenter(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjSpriteList2D_AddVertex(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjSpriteList2D_CloseVertex(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjSpriteList2D_ClearVertexCount(obj)\tvoid", "doc": "" },
+		{ "sig": "ObjSpriteList2D_SetSourceRect(obj, l, t, r, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) texture coordinate (left) (real)\n\t3) texture coordinate (top) (real)\n\t4) texture coordinate (right) (real)\n\t5) texture coordinate (bottom) (real)\nSets the texture rectangle for the sprite. This is the rectangle on the original texture from which the sprite will be drawn." },
+		{ "sig": "ObjSpriteList2D_SetDestRect(obj, l, t, r, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) left (real)\n\t3) top (real)\n\t4) right (real)\n\t5) bottom (real)\nSets the drawing rectangle for the sprite. This is the rectangle where the sprite will be drawn." },
+		{ "sig": "ObjSpriteList2D_SetDestCenter(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nSets the drawing rectangle for the sprite by mapping the center of the source rectangle to (0, 0).\nFor instance, if the rectangle set with ObjSpriteList2D_SetSourceRect is (24, 32, 48, 46) (which is 24 wide and 14 high), the destination rectangle becomes (-12, -7, 12, 7)." },
+		{ "sig": "ObjSpriteList2D_AddVertex(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nAdds a vertex to the specified object.\n(The number of rectangles drawn is increased by 1.)" },
+		{ "sig": "ObjSpriteList2D_CloseVertex(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nAdds the last vertex to the object. Transforming the object with ObjRender_ will affect all rectangles after using this function." },
+		{ "sig": "ObjSpriteList2D_ClearVertexCount(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nClears the vertex count for the specified object." },
 
 		// 3D Sprite Object functions
 
-		{ "sig": "ObjSprite3D_SetSourceRect(obj, l, t, r, b)\tvoid", "doc": "" },
-		{ "sig": "ObjSprite3D_SetDestRect(obj, l, t, r, b)\tvoid", "doc": "" },
-		{ "sig": "ObjSprite3D_SetSourceDestRect(obj, l, t, r, b)\tvoid", "doc": "" },
-		{ "sig": "ObjSprite3D_SetBillboard(obj, enable)\tvoid", "doc": "" },
+		{ "sig": "ObjSprite3D_SetSourceRect(obj, l, t, r, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) texture coordinate (left) (real)\n\t3) texture coordinate (top) (real)\n\t4) texture coordinate (right) (real)\n\t5) texture coordinate (bottom) (real)\nSets the texture rectangle for the sprite. This is the rectangle on the original texture from which the sprite will be drawn." },
+		{ "sig": "ObjSprite3D_SetDestRect(obj, l, t, r, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) left (real)\n\t3) top (real)\n\t4) right (real)\n\t5) bottom (real)\nSets the drawing rectangle for the sprite. This is the rectangle where the sprite will be drawn." },
+		{ "sig": "ObjSprite3D_SetSourceDestRect(obj, l, t, r, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) left (real)\n\t3) top (real)\n\t4) right (real)\n\t5) bottom (real)\nSets the texture rectangle for the sprite, and maps the center of the rectangle to the destination coordinates (0, 0)." },
+		{ "sig": "ObjSprite3D_SetBillboard(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) billboard (bool)\nIf set to true, the object will always be facing the camera." },
 
 		// 3D Mesh Object functions
 
-		{ "sig": "ObjMesh_Create()\tobj", "doc": "" },
-		{ "sig": "ObjMesh_Load(obj, path)\tvoid", "doc": "" },
-		{ "sig": "ObjMesh_SetColor(obj, r, g, b)\tvoid", "doc": "" },
-		{ "sig": "ObjMesh_SetAlpha(obj, alpha)\tvoid", "doc": "" },
-		{ "sig": "ObjMesh_SetAnimation(obj, name, frame)\tvoid", "doc": "" },
-		{ "sig": "ObjMesh_SetCoordinate2D(obj, allow)\tvoid", "doc": "" },
+		{ "sig": "ObjMesh_Create()\tobj", "doc": "Creates a 3D Mesh object and returns its ID." },
+		{ "sig": "ObjMesh_Load(obj, path)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) path of the 3D object file (char)\nLoads a 3D mesh file. The file must be either .mqo (Metasequoia) or .elem (Elfreina) (both are Japanese softwares)." },
+		{ "sig": "ObjMesh_SetColor(obj, r, g, b)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) R (real)\n\t3) G (real)\n\t4) B (real)\nSets the color of the mesh (0-255)." },
+		{ "sig": "ObjMesh_SetAlpha(obj, alpha)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) alpha value (real)\nSets the alpha value of the mesh (0-255)." },
+		{ "sig": "ObjMesh_SetAnimation(obj, name, frame)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) animation name (char)\n\t3) animation frame (real)\nSets the animation of the mesh object. The animation frame of the specified animation name is drawn." },
+		{ "sig": "ObjMesh_SetCoordinate2D(obj, allow)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) 2D coordinates (bool)\nWhen set to true, allows the mesh to be positioned using 2D coordinates." },
 
 		// Text Object functions
 
