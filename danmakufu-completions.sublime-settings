@@ -266,9 +266,9 @@
 
 		{ "sig": "Shot::DeleteShotAll(bullet_type, delete_type)\tvoid", "doc": "Parameters:\n\t1) Type (TYPE_ALL, TYPE_SHOT, TYPE_CHILD)\n\t2) Delete Type (TYPE_IMMEDIATE, TYPE_FADE, TYPE_ITEM)\nDeletes all bullets. ALL will clear all bullets and lasers, SHOT will clear only bullets, and CHILD will clear bullets and lasers fired from the currently running script (e.g. a stage script that spawns enemies, putting CHILD in one of the enemy's script will clear only that enemy's bullets).\nThe second type determines how the bullet will be deleted. IMMEDIATE will immediately delete the bullets, FADE will slowly fade the bullets (note, they will still be visible while fading out, but they will not have any collision), and ITEM will turn the bullets into points that will immediately be collected to the player." },
 		{ "sig": "Shot::DeleteShotInCircle(bullet_type, delete_type, x, y, r)\tvoid", "doc": "Parameters:\n\t1) Type\n\t2) Delete Type\n\t3) X coordinate\n\t4) Y coordinate\n\t5) Radius\nSame as DeleteShotAll, except it will only clear bullets in a defined circle.\nSee documentation for DeleteShotAll for more information." },
-		{ "sig": "Shot::CreateShotA1(x, y, s, a, g, d)\tobj", "doc": "Parameters:\n\t1) X coordinate\n\t2) Y coordinate\n\t3) speed\n\t4) angle\n\t5) graphic\n\t6) delay\nCreates a basic bullet that will move in the angle and speed defined.\nGraphic is the image the bullet will have, while delay is the time in frames that the bullet will appear. During it's delay, there will be a cloud that appears where the bullet will spawn.\nReturns the Object ID." },
+		{ "sig": "Shot::CreateShotA1(x, y, s, a, g, d)\tobj", "doc": "Parameters:\n\t1) X coordinate\n\t2) Y coordinate\n\t3) speed\n\t4) angle\n\t5) graphic\n\t6) delay\nCreates a basic bullet that will move in the angle and speed defined.\nGraphic is the image the bullet will have, while delay is the time in frames that the bullet will appear. During it's delay, there will be a cloud that appears where the bullet will spawn.\nReturns the object ID." },
 		{ "sig": "Shot::CreateShotA2(x, y, s, a, acc, max_s, g, d)\tobj", "doc": "Parameters:\n\t1) X coordinate\n\t2) Y coordinate\n\t3) speed\n\t4) angle\n\t5) acceleration\n\t6)max speed\n\t7) graphic\n\t8) delay\nSame as CreateShotA1, except you can define an acceleration and max speed for the bullet. The number defined for acceleration will be applied to the bullet per frame, so this will usually have low numbers such as 0.1.\nNegative values may be used, however, having a negative value on acceleration but a positive number on max speed (or vice versa) will result in the bullet spawning at max speed." },
-		{ "sig": "Shot::CreateShotOA1(obj, speed, angle, g, d)\tobj", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) speed\n\t3) angle\n\t4) graphic\n\t5) delay\nCreates a bullet that will spawn on the coordinates of the given object id.\nThe bullet and itsParameters act the same as CreateShotA1." },
+		{ "sig": "Shot::CreateShotOA1(obj, speed, angle, g, d)\tobj", "doc": "Parameters:\n\t1) object ID (real)\n\t2) speed\n\t3) angle\n\t4) graphic\n\t5) delay\nCreates a bullet that will spawn on the coordinates of the given object id.\nThe bullet and itsParameters act the same as CreateShotA1." },
 		{ "sig": "Shot::CreateShotB1(x, y, x_spd, y_spd, g, d)\tobj", "doc": "" },
 		{ "sig": "Shot::CreateShotB2(x, y, x_spd, y_spd, x_acc, y_acc, x_max, y_max, g, d)\tobj", "doc": "" },
 		{ "sig": "Shot::CreateShotOB1(obj, x, y, g, d)\tobj", "doc": "" },
@@ -432,19 +432,19 @@
 		// Sound Object functions
 
 		{ "sig": "ObjSound_Create()\tobj", "doc": "Creates and returns a sound object." },
-		{ "sig": "ObjSound_Load(obj, path)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) path\nLoads the specified sound file." },
-		{ "sig": "ObjSound_Play(obj)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\nPlays the sound file associated to the object." },
-		{ "sig": "ObjSound_Stop(obj)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\nStops the sound file associated to the object." },
-		{ "sig": "ObjSound_SetVolumeRate(obj, volume)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) volume (real)\nSets the volume of the sound object (0-100)." },
-		{ "sig": "ObjSound_SetPanRate(obj, pan)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n]t2) volume (real)\nSets the pan volume of the sound object (-100-100).\n0 is neutral, -100 is left-side only, 100 is right-side only." },
-		{ "sig": "ObjSound_SetFade(obj, fade_rate)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) fade (real)\nSets the fade time of the sound object." },
-		{ "sig": "ObjSound_SetLoopEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) loop (boolean)\nWhen set to true, the sound will loop." },
-		{ "sig": "ObjSound_SetLoopTime(obj, start, end)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) loop start (real)\n\t3) loop end (real)\nSets the timing of the loop, in seconds." },
-		{ "sig": "ObjSound_SetLoopSampleCount(obj, start, end)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) loop sample start (real)\n\t3) loop sample end (real)\nSets the timing of the loop based on the sample count." },
-		{ "sig": "ObjSound_SetRestartEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) restart (boolean)\nWhen set to true, allows the sound object to be restarted rather than continuing from where it left off." },
-		{ "sig": "ObjSound_SetSoundDivision(obj, sound_type)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) sound division (SOUND_BGM, SOUND_SE)\nSpecifies whether a sound is a BGM or a sound effect:" },
-		{ "sig": "ObjSound_IsPlaying(obj)\tbool", "doc": "Parameters:\n\t1) Object ID (real)\nReturns true if the sound file is playing." },
-		{ "sig": "ObjSound_GetVolumeRate(obj)\treal", "doc": "Parameters:\n\t1) Object ID (real)\nReturns the volume (0-100) of the sound file." },
+		{ "sig": "ObjSound_Load(obj, path)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) path\nLoads the specified sound file." },
+		{ "sig": "ObjSound_Play(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nPlays the sound file associated to the object." },
+		{ "sig": "ObjSound_Stop(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nStops the sound file associated to the object." },
+		{ "sig": "ObjSound_SetVolumeRate(obj, volume)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) volume (real)\nSets the volume of the sound object (0-100)." },
+		{ "sig": "ObjSound_SetPanRate(obj, pan)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n]t2) volume (real)\nSets the pan volume of the sound object (-100-100).\n0 is neutral, -100 is left-side only, 100 is right-side only." },
+		{ "sig": "ObjSound_SetFade(obj, fade_rate)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) fade (real)\nSets the fade time of the sound object." },
+		{ "sig": "ObjSound_SetLoopEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) loop (boolean)\nWhen set to true, the sound will loop." },
+		{ "sig": "ObjSound_SetLoopTime(obj, start, end)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) loop start (real)\n\t3) loop end (real)\nSets the timing of the loop, in seconds." },
+		{ "sig": "ObjSound_SetLoopSampleCount(obj, start, end)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) loop sample start (real)\n\t3) loop sample end (real)\nSets the timing of the loop based on the sample count." },
+		{ "sig": "ObjSound_SetRestartEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) restart (boolean)\nWhen set to true, allows the sound object to be restarted rather than continuing from where it left off." },
+		{ "sig": "ObjSound_SetSoundDivision(obj, sound_type)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) sound division (SOUND_BGM, SOUND_SE)\nSpecifies whether a sound is a BGM or a sound effect:" },
+		{ "sig": "ObjSound_IsPlaying(obj)\tbool", "doc": "Parameters:\n\t1) object ID (real)\nReturns true if the sound file is playing." },
+		{ "sig": "ObjSound_GetVolumeRate(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the volume (0-100) of the sound file." },
 
 		// File Object functions
 
@@ -479,28 +479,28 @@
 
 		// Move Object functions
 
-		{ "sig": "ObjMove_SetX(obj, x)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetY(obj, y)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetPosition(obj, x, y)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetSpeed(obj, speed)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetAngle(obj, angle)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetAcceleration(obj, accel)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetMaxSpeed(obj, max)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetAngularVelocity(obj, ang_vel)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetDestAtSpeed(obj, x, y, speed)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetDestAtFrame(obj, x, y, frames)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_SetDestAtWeight(obj, x, y, weight, max_s)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_AddPatternA1(obj, f, spd, ang)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_AddPatternA2(obj, f, spd, ang, acc, ang_vel, max_s)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_AddPatternA3(obj, f, spd, ang, acc, ang_vel, max_s, g)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_AddPatternA4(obj, f, spd, ang, acc, ang_vel, max_s, target, g)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_AddPatternB1(obj, f, x_spd, y_spd)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_AddPatternB2(obj, f, x_spd, y_spd, x_acc, y_acc, x_max, y_max)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_AddPatternB3(obj, f, x_spd, y_spd, x_acc, y_acc, x_max, y_max, g)\tvoid", "doc": "" },
-		{ "sig": "ObjMove_GetX(obj)\treal", "doc": "" },
-		{ "sig": "ObjMove_GetY(obj)\treal", "doc": "" },
-		{ "sig": "ObjMove_GetSpeed(obj)\treal", "doc": "" },
-		{ "sig": "ObjMove_GetAngle(obj)\treal", "doc": "" },
+		{ "sig": "ObjMove_SetX(obj, x)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) x coordinate (real)\nSets the x coordinate of the specified object." },
+		{ "sig": "ObjMove_SetY(obj, y)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) y coordinate (real)\nSets the y coordinate of the specified object." },
+		{ "sig": "ObjMove_SetPosition(obj, x, y)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) x coordinate (real)\n\t3) y coordinate (real)\nSets the x and y of the specified object." },
+		{ "sig": "ObjMove_SetSpeed(obj, speed)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) speed (real)\nSets the movement speed per frame for the object." },
+		{ "sig": "ObjMove_SetAngle(obj, angle)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) angle (real)\nSets the movement angle for the object." },
+		{ "sig": "ObjMove_SetAcceleration(obj, accel)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) acceleration (real)\nSets the movement acceleration per frame for the object." },
+		{ "sig": "ObjMove_SetMaxSpeed(obj, max)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) speed (real)\nSets the maximum/minimum speed which the object will reach by acceleration." },
+		{ "sig": "ObjMove_SetAngularVelocity(obj, ang_vel)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) angular velocity (real)\nSets the change in movement angle per frame for the object." },
+		{ "sig": "ObjMove_SetDestAtSpeed(obj, x, y, speed)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) x coordinate (real)\n\t3) y coordinate (real)\n\t4) velocity (real)\nMoves the object towards the given coordinates at the speed specified." },
+		{ "sig": "ObjMove_SetDestAtFrame(obj, x, y, frames)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) x coordinate (real)\n\t3) y coordinate (real)\n\t4) frames (real)\nMoves the object towards the given coordinates in the number of frames specified." },
+		{ "sig": "ObjMove_SetDestAtWeight(obj, x, y, weight, max_s)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) x coordinate (real)\n\t3) y coordinate (real)\n\t4) weight (real)\n\t5) max speed (real)\nMoves the object towards the given coordinates. It will slow down near the end of the movement based on the weight specified." },
+		{ "sig": "ObjMove_AddPatternA1(obj, f, spd, ang)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) frame (real)\n\t3) speed (real)\n\t4) angle (real)\nAfter the specified number of frames, changes the speed and angle of the object. NO_CHANGE can be used to preserve the original speed or angle." },
+		{ "sig": "ObjMove_AddPatternA2(obj, f, spd, ang, acc, ang_vel, max_s)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) frame (real)\n\t3) speed (real)\n\t4) angle (real)\n\t5) acceleration (real)\n\t6) angular velocity (real)\n\t7) max speed (real)\nAfter the specified number of frames, changes the movement properties of the object. NO_CHANGE can be used to preserve the original properties." },
+		{ "sig": "ObjMove_AddPatternA3(obj, f, spd, ang, acc, ang_vel, max_s, g)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) frame (real)\n\t3) speed (real)\n\t4) angle (real)\n\t5) acceleration (real)\n\t6) angular velocity (real)\n\t7) max speed (real)\n\t8) bullet graphic (real)\nAfter the specified number of frames, changes the movement properties of the object. NO_CHANGE can be used to preserve the original properties." },
+		{ "sig": "ObjMove_AddPatternA4(obj, f, spd, ang, acc, ang_vel, max_s, target, g)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) frame (real)\n\t3) speed (real)\n\t4) angle (real)\n\t5) acceleration (real)\n\t6) angular velocity (real)\n\t7) max speed (real)\n\t8) target ID (real)\n\t9) bullet graphic (real)\nAfter the specified number of frames, changes the movement properties of the object. NO_CHANGE can be used to preserve the original properties.\nThe angle parameter is relative to the angle from the object to the target.\nFor instance, if the player object id is used as the target, an angle of 0 will cause the object to aim for the player." },
+		{ "sig": "ObjMove_AddPatternB1(obj, f, x_spd, y_spd)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) frame (real)\n\t3) x speed (real)\n\t4) y speed (real)\nAfter the specified number of frames, changes the x and y movement speeds of the object. NO_CHANGE can be used to preserve the original speeds." },
+		{ "sig": "ObjMove_AddPatternB2(obj, f, x_spd, y_spd, x_acc, y_acc, x_max, y_max)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) frame (real)\n\t3) x speed (real)\n\t4) y speed (real)\n\t5) x acceleration (real)\n\t6) y acceleration (real)\n\t7) x max speed (real)\n\t8) y max speed (real)\nAfter the specified number of frames, changes the movement properties of the object. NO_CHANGE can be used to preserve the original properties." },
+		{ "sig": "ObjMove_AddPatternB3(obj, f, x_spd, y_spd, x_acc, y_acc, x_max, y_max, g)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) frame (real)\n\t3) x speed (real)\n\t4) y speed (real)\n\t5) x acceleration (real)\n\t6) y acceleration (real)\n\t7) x max speed (real)\n\t8) y max speed (real)\n\t9) bullet graphic (real)\nAfter the specified number of frames, changes the movement properties of the object. NO_CHANGE can be used to preserve the original properties." },
+		{ "sig": "ObjMove_GetX(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the x coordinate of the object." },
+		{ "sig": "ObjMove_GetY(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the y coordinate of the object." },
+		{ "sig": "ObjMove_GetSpeed(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the movement speed of the object." },
+		{ "sig": "ObjMove_GetAngle(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the movement angle of the object." },
 
 		// Enemy Object functions
 
@@ -569,7 +569,7 @@
 
 		// Player Object functions
 
-		{ "sig": "ObjPlayer_AddIntersectionCircleA1(obj, off_x, off_y, hit_r, graze_r)\tvoid", "doc": "Parameters:\n\t1) Object ID (real)\n\t2) hitbox x-coordinate (away from the player) (real)\n\t3) hitbox y-coordinate (away from the player) (real)\n\t4) hitbox radius (real)\n\t5) graze radius (real)\nSets the hitbox position and radius, as well as the graze radius." },
+		{ "sig": "ObjPlayer_AddIntersectionCircleA1(obj, off_x, off_y, hit_r, graze_r)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) hitbox x-coordinate (away from the player) (real)\n\t3) hitbox y-coordinate (away from the player) (real)\n\t4) hitbox radius (real)\n\t5) graze radius (real)\nSets the hitbox position and radius, as well as the graze radius." },
 		{ "sig": "ObjPlayer_ClearIntersection(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nDeletes the player hitbox." },
 
 		// Collision Object functions
