@@ -360,7 +360,7 @@
 
 		// Primitive Object functions
 
-		{ "sig": "ObjPrim_Create(obj_type)\tobj", "doc": "Parameters:\n\t1) object type (real)\nCreates a Primitive object and returns its ID. Object types are:\n\tOBJ_PRIMITIVE_2D: primitive (triangles) in the 2D space\n\tOBJ_SPRITE_2D: rectangle in the 2D space (usable by the ObjSprite2D_ functions)\n\tOBJ_SPRITE_LIST_2D: list of rectangles in the 2D space (usable by the ObjSpriteList2D_ functions)\n\tOBJ_PRIMITIVE_3D: primitive (triangles) in the 3D space\n\tOBJ_SPRITE_3D: rectangle in the 3D space (usable by the ObjSprite3D_ functions)." },
+		{ "sig": "ObjPrim_Create(obj_type)\tobj", "doc": "Parameters:\n\t1) object type (constant)\nCreates a Primitive object and returns its ID. Object types are:\n\tOBJ_PRIMITIVE_2D: primitive (triangles) in the 2D space\n\tOBJ_SPRITE_2D: rectangle in the 2D space (usable by the ObjSprite2D_ functions)\n\tOBJ_SPRITE_LIST_2D: list of rectangles in the 2D space (usable by the ObjSpriteList2D_ functions)\n\tOBJ_PRIMITIVE_3D: primitive (triangles) in the 3D space\n\tOBJ_SPRITE_3D: rectangle in the 3D space (usable by the ObjSprite3D_ functions)." },
 		{ "sig": "ObjPrim_SetPrimitiveType(prim_type)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) primitive type (real)\nSets the vertex layout for the object among the following:\n\tPRIMITIVE_TRIANGLELIST\n\tPRIMITIVE_TRIANGLESTRIP\n\tPRIMITIVE_TRIANGLEFAN" },
 		{ "sig": "ObjPrim_SetVertexCount(obj, vertices)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) number of vertices (real)\nSets the number of vertices the object contains." },
 		{ "sig": "ObjPrim_GetVertexCount(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the number of vertices the object contains." },
@@ -431,7 +431,7 @@
 
 		// Sound Object functions
 
-		{ "sig": "ObjSound_Create()\tobj", "doc": "Creates and returns a sound object." },
+		{ "sig": "ObjSound_Create()\tobj", "doc": "Creates a sound object and returns its ID." },
 		{ "sig": "ObjSound_Load(obj, path)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) path\nLoads the specified sound file." },
 		{ "sig": "ObjSound_Play(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nPlays the sound file associated to the object." },
 		{ "sig": "ObjSound_Stop(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nStops the sound file associated to the object." },
@@ -504,24 +504,24 @@
 
 		// Enemy Object functions
 
-		{ "sig": "ObjEnemy_Create(obj_type)\tobj", "doc": "" },
-		{ "sig": "ObjEnemy_Regist(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemy_GetInfo(obj, info_type)\tdepend", "doc": "" },
-		{ "sig": "ObjEnemy_SetLife(obj, life)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemy_AddLife(obj, life)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemy_SetDamageRate(obj, shot_rate, bomb_rate)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemy_SetIntersectionCircleToShot(obj, x, y, r)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemy_SetIntersectionCircleToPlayer(obj, x, y, r)\tvoid", "doc": "" },
+		{ "sig": "ObjEnemy_Create(obj_type)\tobj", "doc": "Parameters:\n\t1) object type (constant)\nCreates an Enemy object and returns its ID. Object types are:\n\tOBJ_ENEMY\n\tOBJ_ENEMY_BOSS\nIn order to draw the enemy object and have it listed as an existing enemy, you have to register it using ObjEnemy_Regist.\nIf you want to create a boss enemy object, you have to create a boss scene object first." },
+		{ "sig": "ObjEnemy_Regist(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nMakes the specified enemy object active." },
+		{ "sig": "ObjEnemy_GetInfo(obj, info_type)\tdepend", "doc": "Parameters:\n\t1) object ID (real)\n\t2) info type (constant)\n\tINFO_LIFE: Returns the life points of the enemy (real).\n\tINFO_DAMAGE_RATE_SHOT: Returns the damage rate percentage of normal player shots set by ObjEnemy_SetDamageRate (real: 1-100)\n\tINFO_DAMAGE_RATE_SPELL: Returns the damage rate percentage of player bombs set by ObjEnemy_SetDamageRate (real: 1-100)\n\tINFO_SHOT_HIT_COUNT: Returns the amount of times the enemy was hit by player bullets in the previous frame (real)" },
+		{ "sig": "ObjEnemy_SetLife(obj, life)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) life (real)\nSets the amount of life points for the specified enemy object." },
+		{ "sig": "ObjEnemy_AddLife(obj, life)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) life (real)\nAdds the specified amount of life points to the enemy's life." },
+		{ "sig": "ObjEnemy_SetDamageRate(obj, shot_rate, bomb_rate)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) shot damage rate (real)\n\t3) spell damage rate (real)\nSets the damage rate of the player's attacks against the specified enemy.\nSetting to 0 will cause the enemy to take no damage, 100 is the default (100%) value. Values above 100 are possible." },
+		{ "sig": "ObjEnemy_SetIntersectionCircleToShot(obj, x, y, r)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) collision detection x-coordinate (real)\n\t3) collision detection y-coordinate (real)\n\t4) collision detection radius (real)\nSets the position and size of the enemy hitbox (any attack from the player touching the circle will damage the enemy)." },
+		{ "sig": "ObjEnemy_SetIntersectionCircleToPlayer(obj, x, y, r)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) collision detection x-coordinate (real)\n\t3) collision detection y-coordinate (real)\n\t4) collision detection radius (real)\nSets the enemy hitbox for player collision. Any collision with the circle will kill the character.\nCreates a Boss Scene object and returns its ID." },
 
 		// Boss Scene Object functions
 
-		{ "sig": "ObjEnemyBossScene_Create()\tobj", "doc": "" },
-		{ "sig": "ObjEnemyBossScene_Regist(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemyBossScene_Add(obj, phase, path)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemyBossScene_LoadInThread(obj)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemyBossScene_GetInfo(obj, info_type)\tdepend", "doc": "" },
-		{ "sig": "ObjEnemyBossScene_SetSpellTimer(obj, time)\tvoid", "doc": "" },
-		{ "sig": "ObjEnemyBossScene_StartSpell(obj)\tvoid", "doc": "" },
+		{ "sig": "ObjEnemyBossScene_Create()\tobj", "doc": "Creates a Boss Scene object and returns its ID." },
+		{ "sig": "ObjEnemyBossScene_Regist(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nStarts the specified boss scene." },
+		{ "sig": "ObjEnemyBossScene_Add(obj, phase, path)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) life phase (real)\n\t3) script path (char)\nAdds the specified script to the boss scene at the specified phase." },
+		{ "sig": "ObjEnemyBossScene_LoadInThread(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nCompiles all the enemy scripts in the boss scene and initializes global variables.\nAs the length of compile time cannot be guaranteed, initialize all global variables besides constants in @Initialize." },
+		{ "sig": "ObjEnemyBossScene_GetInfo(obj, info_type)\tdepend", "doc": "Parameters:\n\t1) object ID (real)\n\t2) info type (constant)\n\tINFO_IS_SPELL: Returns true if a spell card is active.\n\tINFO_IS_LAST_SPELL： Returns true if the Last Spell is active.\n\tINFO_IS_DURABLE_SPELL： Returns true in the case of a survival spell.\n\tINFO_IS_LAST_STEP： Returns true when the last spell is active.\n\tINFO_TIMER： Returns the timer value in seconds.\n\tINFO_TIMERF： Returns the timer value in frames (returns -1 if unlimited).\n\tINFO_ORGTIMERF： Returns the original timer value in frames (returns -1 if unlimited).\n\tINFO_SPELL_SCORE： Returns the score of the spell card.\n\tINFO_REMAIN_STEP_COUNT： Returns the number of steps remaining in the active life phase(spell, non spell, etc).\n\tINFO_ACTIVE_STEP_LIFE_COUNT： Returns the life of the enemy for the active step.\n\tINFO_ACTIVE_STEP_TOTAL_MAX_LIFE： Returns the initial life of the enemy for the active life phase.\n\tINFO_ACTIVE_STEP_TOTAL_LIFE： Returns the total remaining life for the active life phase\n\tINFO_PLAYER_SHOOTDOWN_COUNT： Returns the amount of times the player died during the spell.\n\tINFO_PLAYER_SPELL_COUNT： Returns the amount of times the player bombed during the spell.\n\tINFO_ACTIVE_STEP_LIFE_RATE_LIST： Returns an array containing the proportion (0-1) of each step's amount of life in the active life phase." },
+		{ "sig": "ObjEnemyBossScene_SetSpellTimer(obj, time)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) timer (real)\nSets the timer." },
+		{ "sig": "ObjEnemyBossScene_StartSpell(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nStarts the boss spell card." },
 
 		// Shot Object functions
 
