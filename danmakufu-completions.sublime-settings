@@ -128,13 +128,13 @@
 
 		//3D Camera functions
 
-		{ "sig": "3DCamera::SetCameraFocusX(x)\tvoid", "doc": "" },
-		{ "sig": "3DCamera::SetCameraFocusY(y)\tvoid", "doc": "" },
-		{ "sig": "3DCamera::SetCameraFocusZ(z)\tvoid", "doc": "" },
-		{ "sig": "3DCamera::SetCameraFocusXYZ(x, y, z)\tvoid", "doc": "" },
-		{ "sig": "3DCamera::SetCameraRadius(radius)\tvoid", "doc": "" },
-		{ "sig": "3DCamera::SetCameraAzimuthAngle(angle)\tvoid", "doc": "" },
-		{ "sig": "3DCamera::SetCameraElevationAngle(angle)\tvoid", "doc": "" },
+		{ "sig": "3DCamera::SetCameraFocusX(x)\tvoid", "doc": "Parameters:\n\t1) x-coordinate\nSets the x coordinate of the camera focus" },
+		{ "sig": "3DCamera::SetCameraFocusY(y)\tvoid", "doc": "Parameters:\n\t1) y-coordinate\nSets the y coordinate of the camera focus" },
+		{ "sig": "3DCamera::SetCameraFocusZ(z)\tvoid", "doc": "Parameters:\n\t1) z-coordinate\nSets the z coordinate of the camera focus" },
+		{ "sig": "3DCamera::SetCameraFocusXYZ(x, y, z)\tvoid", "doc": "Parameters:\n\t1) X-coordinate\n\t2) Y-coordinate\n\t3) Z-coordinate\nSets the X, Y, and Z coordinates of the camera focus" },
+		{ "sig": "3DCamera::SetCameraRadius(radius)\tvoid", "doc": "Parameters:\n\t1) distance\nSets the distance of the camera to the focus point." },
+		{ "sig": "3DCamera::SetCameraAzimuthAngle(angle)\tvoid", "doc": "Parameters:\n\t1) azumith angle from focus point\nSets the azimuth angle from the focus point." },
+		{ "sig": "3DCamera::SetCameraElevationAngle(angle)\tvoid", "doc": "Parameters:\n\t1) elevation angle from focus point\nSets the elevation angle from the focus point." },
 		{ "sig": "3DCamera::SetCameraYaw(angle)\tvoid", "doc": "" },
 		{ "sig": "3DCamera::SetCameraPitch(pitch)\tvoid", "doc": "" },
 		{ "sig": "3DCamera::SetCameraRoll(roll)\tvoid", "doc": "" },
