@@ -552,7 +552,7 @@
 		{ "sig": "ObjLaser_SetRenderWidth(obj, width)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) render width (real)\nSets the visible width of the laser object (not the same as the laser object's collision width). " },
 		{ "sig": "ObjLaser_SetIntersectionWidth(obj, width)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) collision width (real)\nSets the collision width of the laser object.\nThis can be set to be larger than the laser object's render width, so take caution." },
 		{ "sig": "ObjLaser_SetGrazeInvalidFrame(obj, frames)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) invalid graze frames (real)\nSpecify the number of frames after a graze where graze is not counted.\nIf you specify 0, the laser object can be grazed only once. \nThe default value is 20 frames (3 graze/second)." },
-		{ "sig": "ObjLaser_SetInvalidLength(obj, start_len, end_len)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) ratio removed from the laser base (real)\n\t3) ratio removed from the laser tip (real)\nSets the portion of the laser object where there is no collision, in relation to the base and the tip of the laser.\nBy default, the values are 0.1 (10%)." },
+		{ "sig": "ObjLaser_SetInvalidLength(obj, start_len, end_len)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) ratio removed from the laser base (real)\n\t3) ratio removed from the laser tip (real)\nSets the portion of the laser object where there is no collision, in relation to the base and the tip of the laser.\nBy default, the values are 10 (10%)." },
 		{ "sig": "ObjLaser_GetLength(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the length of the laser object." },
 		{ "sig": "ObjStLaser_SetAngle(obj, angle)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) angle (real)\nSets the angle at which the straight laser object will point at (different from movement angle)." },
 		{ "sig": "ObjStLaser_GetAngle(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the angle at which the straight laser object is pointing (different from movement angle)." },
@@ -561,23 +561,23 @@
 
 		// Item Object functions
 
-		{ "sig": "ObjItem_SetItemID(obj, item_id)\tvoid", "doc": "" },
-		{ "sig": "ObjItem_SetRenderScoreEnable(obj, enable)\tvoid", "doc": "" },
-		{ "sig": "ObjItem_SetAutoCollectEnable(obj, enable)\tvoid", "doc": "" },
-		{ "sig": "ObjItem_SetDefinedMovePatternA1(obj, move_type)\tvoid", "doc": "" },
-		{ "sig": "ObjItem_GetInfo(obj, info_type)\tdepend", "doc": "" },
+		{ "sig": "ObjItem_SetItemID(obj, item_id)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) item ID (real)\nSets the ID of the item object, as defined in the item definition script." },
+		{ "sig": "ObjItem_SetRenderScoreEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) enable score display (bool)\nSets whether a score indicator will be displayed when the item object is collected.\nThis is the score given as argument to the CreateItem() functions." },
+		{ "sig": "ObjItem_SetAutoCollectEnable(obj, enable)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) enable auto-collect (bool)\nSets whether the item will be pulled towards the player when the player moves past the point of auto-collection." },
+		{ "sig": "ObjItem_SetDefinedMovePatternA1(obj, move_type)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) movement type (real)\nSets the movement type of the item object. Movement types are:\n\tITEM_MOVE_DOWN: pops upward, then drops down\n\tITEM_MOVE_TOPLAYER: automatically flies towards the player\nDefaults to ITEM_MOVE_DOWN." },
+		{ "sig": "ObjItem_GetInfo(obj, info_type)\tdepend", "doc": "Parameters:\n\t1) object ID (real)\n\t2) info type (constant)\n\tINFO_ITEM_SCORE: Returns the score value of the item object (real)." },
 
 		// Player Object functions
 
-		{ "sig": "ObjPlayer_AddIntersectionCircleA1(obj, off_x, off_y, hit_r, graze_r)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) hitbox x-coordinate (away from the player) (real)\n\t3) hitbox y-coordinate (away from the player) (real)\n\t4) hitbox radius (real)\n\t5) graze radius (real)\nSets the hitbox position and radius, as well as the graze radius." },
-		{ "sig": "ObjPlayer_ClearIntersection(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nDeletes the player hitbox." },
+		{ "sig": "ObjPlayer_AddIntersectionCircleA1(obj, off_x, off_y, hit_r, graze_r)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) hitbox x-coordinate (relative to player object) (real)\n\t3) hitbox y-coordinate (relative to player object) (real)\n\t4) hitbox radius (real)\n\t5) graze radius (real)\nCreates a hitbox of specified radius for collision detection of the player object.\nThe graze area extends the specified radius around the hitbox (the true graze radius is the sum of the two).\nThe hitbox will remain valid for every frame once created." },
+		{ "sig": "ObjPlayer_AddIntersectionCircleA2(obj, off_x, off_y, graze_r)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\n\t2) grazebox x-coordinate (relative to player object) (real)\n\t3) grazebox y-coordinate (relative to player object) (real)\n\t4) graze radius (real)\nCreates a grazebox of specified radius for the player object.\nThe grazebox will remain valid for every frame once created." },
+		{ "sig": "ObjPlayer_ClearIntersection(obj)\tvoid", "doc": "Parameters:\n\t1) object ID (real)\nDeletes the hitbox of the player object." },
 
 		// Collision Object functions
 
-		{ "sig": "ObjCol_IsIntersected(obj)\tbool", "doc": "" },
-		{ "sig": "ObjCol_GetListOfIntersectedEnemyID(obj)\tobj[]", "doc": "" },
-		{ "sig": "ObjCol_GetIntersectedCount(obj)\treal", "doc": "" }
-
+		{ "sig": "ObjCol_IsIntersected(obj)\tbool", "doc": "Parameters:\n\t1) object ID (real)\nReturns true if the specified object is currently intersecting with another object." },
+		{ "sig": "ObjCol_GetListOfIntersectedEnemyID(obj)\tobj[]", "doc": "Parameters:\n\t1) object ID (real)\nReturns an array of all enemy object IDs that the specified object is currently intersecting with." },
+		{ "sig": "ObjCol_GetIntersectedCount(obj)\treal", "doc": "Parameters:\n\t1) object ID (real)\nReturns the number of times the specified object intersected with other objects during the previous frame.\nFor example, this can be used to determine how many player shots have collided with an enemy." }
 
 		// Note: Must not have trailing comma for ST2 compatibility
 	]
