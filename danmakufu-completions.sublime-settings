@@ -42,14 +42,14 @@
 
 		// Path functions
 
-		{ "sig": "Path::GetFileDirectory(path)\tchar", "doc": "" },
-		{ "sig": "Path::GetDirectoryList(path)\tstring[]", "doc": "" },
-		{ "sig": "Path::GetModuleDirectory()\tchar", "doc": "" },
-		{ "sig": "Path::GetMainStgScriptPath()\tchar", "doc": "" },
-		{ "sig": "Path::GetMainPackageScriptPath()\tchar", "doc": "" },
-		{ "sig": "Path::GetMainStgScriptDirectory()\tchar", "doc": "" },
-		{ "sig": "Path::GetCurrentScriptDirectory()\tchar", "doc": "" },
-		{ "sig": "Path::GetScriptPathList(folder, type)\tstring[]", "doc": "" },
+		{ "sig": "Path::GetFileDirectory(path)\tchar", "doc": "Parameters:\n\t1) file path (char)\nReturns the directory of the specified file path.\nSpecifically, returns the input string up to the rightmost forward slash, with backslashes removed." },
+		{ "sig": "Path::GetDirectoryList(path)\tstring[]", "doc": "Parameters:\n\t1) file/folder path (char)\nReturns an array of the directories available within the directory of the specified path." },
+		{ "sig": "Path::GetModuleDirectory()\tchar", "doc": "Returns the directory containing the running th_dnh.exe file." },
+		{ "sig": "Path::GetMainStgScriptPath()\tchar", "doc": "Returns the path of the current stage of the script running." },
+		{ "sig": "Path::GetMainPackageScriptPath()\tchar", "doc": "Returns the directory of the currently running package script." },
+		{ "sig": "Path::GetMainStgScriptDirectory()\tchar", "doc": "Returns the directory of the current stage of the script running." },
+		{ "sig": "Path::GetCurrentScriptDirectory()\tchar", "doc": "Returns the directory of the file in which this function was called." },
+		{ "sig": "Path::GetScriptPathList(folder, type)\tstring[]", "doc": "Parameters:\n\t1) file/folder path (char)\n\t2) script type (constant)\nReturns an array of available (selectable at selection screen) scripts of the specified type within the directory of the specified path.\nScript types are:\n\tTYPE_SCRIPT_ALL: All scripts\n\tTYPE_SCRIPT_PLAYER: Player scripts\n\tTYPE_SCRIPT_SINGLE: Single scripts\n\tTYPE_SCRIPT_PLURAL: Plural scripts\n\tTYPE_SCRIPT_STAGE: Stage scripts\n\tTYPE_SCRIPT_PACKAGE: Package scripts" },
 
 		// Time functions
 
@@ -61,7 +61,7 @@
 
 		// Debug functions
 
-		{ "sig": "Debug::WriteLog(string)\tvoid", "doc": "Parameters:\n\t1) String\nOutputs the given string to log." },
+		{ "sig": "Debug::WriteLog(string)\tvoid", "doc": "Parameters:\n\t1) String\nOutputs the given string to the log file." },
 		{ "sig": "Debug::RaiseError(string)\tvoid", "doc": "Parameters:\n\t1) String\nCreates an error box with the specified string.\nExecution of the script is stopped, closing the script." },
 
 		// Common Data functions
