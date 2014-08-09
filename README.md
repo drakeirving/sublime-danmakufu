@@ -12,7 +12,7 @@ Designed for easy addition of support for arbitrary languages and enabling of fu
 
 * Code completion for all ph3 engine library functions, with the standard fuzzy matching and tabbable parameters
 
-* Function documentation\*, available in context menu and through ctrl+super+d by default
+* On-demand function documentation for the ph3 library, available in context menu and through ctrl+super+d by default
 
 * Sublime is probably better than the editor you're using now, considering you write Danmakufu scripts
 
@@ -21,8 +21,6 @@ Designed for easy addition of support for arbitrary languages and enabling of fu
 ![autocomplete for when you're coding drunk](ss/2.gif)
 
 ![press buttons get docs](ss/3.png)
-
-\*Note: I have not included the function documentation for the Danmakufu ph3 library itself, because it would take ages to write. Somebody please do this.
 
 ### Installation ###
 
