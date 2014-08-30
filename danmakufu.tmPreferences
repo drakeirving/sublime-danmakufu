@@ -6,6 +6,8 @@
 	<string>Comments</string>
 	<key>settings</key>
 	<dict>
+		<key>icon</key>
+		<string>file_type_danmakufu.png</string>
 		<key>shellVariables</key>
 		<array>
 			<dict>
