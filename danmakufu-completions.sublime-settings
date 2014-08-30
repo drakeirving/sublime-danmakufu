@@ -155,19 +155,19 @@
 
 		// 2D Camera functions
 
-		{ "sig": "2DCamera::Set2DCameraFocusX(x)\tvoid", "doc": "" },
-		{ "sig": "2DCamera::Set2DCameraAngleZ(angle)\tvoid", "doc": "" },
-		{ "sig": "2DCamera::Set2DCameraFocusY(y)\tvoid", "doc": "" },
-		{ "sig": "2DCamera::Set2DCameraRatio(ratio)\tvoid", "doc": "" },
-		{ "sig": "2DCamera::Set2DCameraRatioX(ratio)\tvoid", "doc": "" },
-		{ "sig": "2DCamera::Set2DCameraRatioY(ratio)\tvoid", "doc": "" },
-		{ "sig": "2DCamera::Reset2DCamera()\tvoid", "doc": "" },
-		{ "sig": "2DCamera::Get2DCameraX()\treal", "doc": "" },
-		{ "sig": "2DCamera::Get2DCameraY()\treal", "doc": "" },
-		{ "sig": "2DCamera::Get2DCameraAngleZ()\treal", "doc": "" },
-		{ "sig": "2DCamera::Get2DCameraRatio()\treal", "doc": "" },
-		{ "sig": "2DCamera::Get2DCameraRatioX()\treal", "doc": "" },
-		{ "sig": "2DCamera::Get2DCameraRatioY()\treal", "doc": "" },
+		{ "sig": "2DCamera::Set2DCameraFocusX(x)\tvoid", "doc": "Parameters:\n\t1) x-coordinate\nSets the x-coordinate of the focus point.\nIt is usually the center of the screen." },
+		{ "sig": "2DCamera::Set2DCameraFocusY(y)\tvoid", "doc": "Parameters:\n\t1) y-coordinate\nSets the y-coordinate of the focus point.\nIt is usually the center of the screen." },
+		{ "sig": "2DCamera::Set2DCameraAngleZ(angle)\tvoid", "doc": "Parameters:\n\t1) z-rotation\nSets the z-angle of the 2Dcamera" },
+		{ "sig": "2DCamera::Set2DCameraRatio(ratio)\tvoid", "doc": "Parameters:\n\t1) zoom\nSets the zoom of the camera, centered on the focus point.\nThis value is usually 1." },
+		{ "sig": "2DCamera::Set2DCameraRatioX(ratio)\tvoid", "doc": "Parameters:\n\t1) x-zoom\nSets the magnification of the X-axis of the 2D camera, centered on the focus point.\nThe value is usually 1.\nSetting it to 2 will double the size of the x-axis and setting a negative value will flip the x-axis." },
+		{ "sig": "2DCamera::Set2DCameraRatioY(ratio)\tvoid", "doc": "Parameters:\n\t1) y-zoom\nSets the magnification of the Y-axis of the 2D camera, centered on the focus point.\nThe value is usually 1.\nSetting it to 2 will double the size of the y-axis and setting a negative value will flip the y-axis." },
+		{ "sig": "2DCamera::Reset2DCamera()\tvoid", "doc": "Resets both the focus point and the zoom ratio, respectively to the center of the screen and 1." },
+		{ "sig": "2DCamera::Get2DCameraX()\treal", "doc": "Returns the x-coordinate of the camera." },
+		{ "sig": "2DCamera::Get2DCameraY()\treal", "doc": "Returns the y-coordinate of the camera." },
+		{ "sig": "2DCamera::Get2DCameraAngleZ()\treal", "doc": "Returns the z rotation angle of the camera." },
+		{ "sig": "2DCamera::Get2DCameraRatio()\treal", "doc": "Returns the zoom ratio of the camera." },
+		{ "sig": "2DCamera::Get2DCameraRatioX()\treal", "doc": "Returns the x zoom ratio of the camera." },
+		{ "sig": "2DCamera::Get2DCameraRatioY()\treal", "doc": "Returns the y zoom ratio of the camera." },
 
 		//Script functions
 
