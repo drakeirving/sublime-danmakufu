@@ -252,16 +252,16 @@
 
 		//Enemy functions
 
-		{ "sig": "Enemy::GetEnemyBossSceneObjectID()\tobj", "doc": "" },
-		{ "sig": "Enemy::GetEnemyBossObjectID()\tobj[]", "doc": "" },
-		{ "sig": "Enemy::GetAllEnemyID()\tobj[]", "doc": "" },
-		{ "sig": "Enemy::GetIntersectionRegistedEnemyID()\tobj[]", "doc": "" },
-		{ "sig": "Enemy::GetAllEnemyIntersectionPosition()\treal[][]", "doc": "" },
-		{ "sig": "Enemy::GetEnemyIntersectionPosition(x, y, max_num)\treal[][]", "doc": "" },
-		{ "sig": "Enemy::GetEnemyIntersectionPositionByIdA1(obj)\treal[][]", "doc": "" },
-		{ "sig": "Enemy::GetEnemyIntersectionPositionByIdA2(obj, x, y)\treal[][]", "doc": "" },
-		{ "sig": "Enemy::LoadEnemyShotData(path)\tvoid", "doc": "" },
-		{ "sig": "Enemy::ReloadEnemyShotData(path)\tvoid", "doc": "" },
+		{ "sig": "Enemy::GetEnemyBossSceneObjectID()\tobj", "doc": "Gets the boss scene object ID.\nWhen not in a boss scene, returns ID_INVALID." },
+		{ "sig": "Enemy::GetEnemyBossObjectID()\tobj[]", "doc": "Gets the ID of the boss present on the screen, and returns it in an array." },
+		{ "sig": "Enemy::GetAllEnemyID()\tobj[]", "doc": "Gets the ID of every enemy present on the screen, and returns them in an array." },
+		{ "sig": "Enemy::GetIntersectionRegistedEnemyID()\tobj[]", "doc": "Gets the Object ID of all enemies with a registered hitbox to player shots (via ObjEnemy_SetIntersectionCircleToShot())." },
+		{ "sig": "Enemy::GetAllEnemyIntersectionPosition()\treal[][]", "doc": "Gets the the position of all enemies for which collision detection is true (currently intersecting)\nReturns it in a 2-dimension array ([index][<x-coordinate, y-coordinate>])." },
+		{ "sig": "Enemy::GetEnemyIntersectionPosition(x, y, max_num)\treal[][]", "doc": "Parameters:\n\t1) X coordinate\n\t2) Y Coordinate\n\t3) highest acquisition value\nGets the enemy intersection position around given position, and returns a 2D array ([index][<x-coordinate, y-coordinate>])\nThe first value (index 0) corresponds to the nearest position." },
+		{ "sig": "Enemy::GetEnemyIntersectionPositionByIdA1(obj)\treal[][]", "doc": "Parameters:\n\t1) Object ID\nGets all collision detection positions of the specified enemy, and returns a 2D array ([index][<x-coordinate, y-coordinate>])." },
+		{ "sig": "Enemy::GetEnemyIntersectionPositionByIdA2(obj, x, y)\treal[][]", "doc": "Parameters:\n\t1) Object ID\n\t2) X coordinate\n\t3) Y coordinate\nGets all collision detection positions of the specified enemy, and returns a 2D array ([index][<x-coordinate, y-coordinate>]).\nThe first value (index 0) corresponds to the nearest position from the specified position." },
+		{ "sig": "Enemy::LoadEnemyShotData(path)\tvoid", "doc": "Parameters:\n\t1) Filepath\nLoads specified shot image file.\nFiles with the same name can only be loaded once." },
+		{ "sig": "Enemy::ReloadEnemyShotData(path)\tvoid", "doc": "Parameters:\n\t1) Filepath\nReloads specified shot image file (you can also (re)load a file that has not been loaded by LoadEnemyShotData).\nUnlike LoadEnemyShotData, this function can load the same file several times." },
 
 		//Shot functions
 
