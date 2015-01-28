@@ -26,7 +26,7 @@
 		{ "sig": "Math::absolute(a)\treal", "doc": "Parameters:\n\t1) value\nReturns the value as an absolute number (if it is negative, it will be changed to a positive)." },
 		{ "sig": "Math::modc(a, mod)\treal", "doc": "Parameters:\n\t1) value\n\t2) divisor\nReturns the value, modulo the divisor.\nModulus provides the remainder of the division (7 modulo 5 would be 2)." },
 
-		// String functions
+		// Text functions
 
 		{ "sig": "String::InstallFont(path)\tbool", "doc": "Parameters:\n\t1) path to font\nLoads the given font, which can be used with ObjText_SetFontType, allowing for usage of fonts that are not standard to Windows.[r]Returns true if successful." },
 		{ "sig": "String::ToString(a)\tchar", "doc": "Parameters:\n\t1) value\nReturns the value as a string, able to be used by text functions." },
@@ -43,6 +43,7 @@
 		// Path functions
 
 		{ "sig": "Path::GetFileDirectory(path)\tchar", "doc": "Parameters:\n\t1) file path (char)\nReturns the directory of the specified file path.\nSpecifically, returns the input string up to the rightmost forward slash, with backslashes removed." },
+		{ "sig": "Path::GetFilePathList(path)\tstring[]", "doc": "Parameters:\n\t1) file/folder path (char)" },
 		{ "sig": "Path::GetDirectoryList(path)\tstring[]", "doc": "Parameters:\n\t1) file/folder path (char)\nReturns an array of the directories available within the directory of the specified path." },
 		{ "sig": "Path::GetModuleDirectory()\tchar", "doc": "Returns the directory containing the running th_dnh.exe file." },
 		{ "sig": "Path::GetMainStgScriptPath()\tchar", "doc": "Returns the path of the current stage of the script running." },
@@ -126,6 +127,11 @@
 		{ "sig": "Render::SaveRenderedTextureA2(target, file, l, t, r, b)\tvoid", "doc": "" },
 		{ "sig": "Render::SaveSnapShotA1(file)\tvoid", "doc": "" },
 		{ "sig": "Render::SaveSnapShotA2(file, l, t, r, b)\tvoid", "doc": "" },
+		{ "sig": "Render::IsPixelShaderSupported(ver, ver)\tbool", "doc": "" },
+		{ "sig": "Render::SetShader(obj, real, real)\tvoid", "doc": "" },
+		{ "sig": "Render::SetShaderI(obj, real, real)\tvoid", "doc": "" },
+		{ "sig": "Render::ResetShader(real, real)\tvoid", "doc": "" },
+		{ "sig": "Render::ResetShaderI(real, real)\tvoid", "doc": "" },
 
 		//3D Camera functions
 
