@@ -292,19 +292,19 @@
 
 		//Item functions
 
-		{ "sig": "Item::CreateItemA1(item_type, x, y, score)\tobj", "doc": "" },
-		{ "sig": "Item::CreateItemA2(item_type, x, y, x_dest, y_dest, score)\tobj", "doc": "" },
-		{ "sig": "Item::CreateItemU1(id, x, y, score)\tobj", "doc": "" },
-		{ "sig": "Item::CreateItemU2(id, x, y, x_dest, y_dest, score)\tobj", "doc": "" },
-		{ "sig": "Item::CollectAllItems()\tvoid", "doc": "" },
-		{ "sig": "Item::CollectItemsByType(item_type)\tvoid", "doc": "" },
-		{ "sig": "Item::CollectItemsInCircle(x, y, r)\tvoid", "doc": "" },
-		{ "sig": "Item::CancelCollectItems()\tvoid", "doc": "" },
-		{ "sig": "Item::StartItemScript(path)\tvoid", "doc": "" },
-		{ "sig": "Item::LoadItemData(path)\tvoid", "doc": "" },
-		{ "sig": "Item::ReloadItemData(path)\tvoid", "doc": "" },
-		{ "sig": "Item::SetDefaultBonusItemEnable(use)\tvoid", "doc": "" },
-
+		{ "sig": "Item::CreateItemA1(item_type, x, y, score)\tobj", "doc": "Parameters:\n\t1) Type (ITEM_1UP, ITEM_1UP_S, ITEM_SPELL, ITEM_SPELL_S, ITEM_POINT, ITEM_POINT_S, ITEM_POWER, ITEM_POWER_S, ITEM_USER)\n\t2) X coordinate\n\t3) Y coordinate\n\t4) Score\nCreates an item at the specified points. The types ending in _S will create a smaller version of the specified item.\nscoring is the value the spawned item will add to your score." },
+		{ "sig": "Item::CreateItemA2(item_type, x, y, x_dest, y_dest, score)\tobj", "doc": "Parameters:\n\t1) Type (ITEM_1UP, ITEM_1UP_S, ITEM_SPELL, ITEM_SPELL_S, ITEM_POINT, ITEM_POINT_S, ITEM_POWER, ITEM_POWER_S, ITEM_USER)\n\t2) X coordinate\n\t3) Y coordinate\n\t4) X destination\n\t5) Y destination\n\t6) Score\nSame as CreateItemA1, except now it will quickly move towards the specified coordinates before slowly falling down." },
+		{ "sig": "Item::CreateItemU1(id, x, y, score)\tobj", "doc": "Parameters:\n\t1) Item ID\n\t2) X coordinate\n\t3) Y coordinate\n\t4) scoring\nCreates an item much like CreateItemA1, however it will spawn a user-defined item associated with the specified ID." },
+		{ "sig": "Item::CreateItemU2(id, x, y, x_dest, y_dest, score)\tobj", "doc": "Parameters:\n\t1) Item ID\n\t2) X coordinate\n\t3) Y coordinate\n\t4) X destination\n\t5) Y destination\n\t6) scoring\nCreates an item much like CreateItemA2, however it will spawn a user-defined item associated with the specified ID." },
+		{ "sig": "Item::CollectAllItems()\tvoid", "doc": "Makes all items fly towards the player" },
+		{ "sig": "Item::CollectItemsByType(item_type)\tvoid", "doc": "Parameters:\n\t1) Type\nMakes all items of the specified type fly toward the player." },
+		{ "sig": "Item::CollectItemsInCircle(x, y, r)\tvoid", "doc": "Parameters:\n\t1) X coordinate of center\n\t2) Y coordinate of center\n\t3) radius of circle\nMakes all items within the circle fly toward the player." },
+		{ "sig": "Item::CancelCollectItems()\tvoid", "doc": "Cancels any items that were currently moving to the player for collection." },
+		{ "sig": "Item::StartItemScript(path)\tvoid", "doc": "Parameters:\n\t1) Path to Item Script\nStarts the script for processing user-defined items. " },
+		{ "sig": "Item::SetDefaultBonusItemEnable(bool)\tvoid", "doc": "Parameters:\n\t1) boolean\nSets whether or not to create the default autocollected bullet delete items when bullets are deleted to items.\nTrue will create the items, false will not. The default value is true." },
+		{ "sig": "Item::LoadItemData(path)\tvoid", "doc": "Parameters:\n\t1) Script path\nLoads the specified item data.\nCan be called any amount of times, but currently existing IDs will be replaced by new ones of the same value.\nYou may not use the same file twice in this function; to do so, see ReloadItemData." },
+		{ "sig": "Item::ReloadItemData(path)\tvoid", "doc": "Parameters:\n\t1) Script path\nReloads the specified item data.\nCan be called any amount of times, but currently existing IDs will be replaced by new ones of the same value.\nYou do not need to use LoadItemData before using this function." },
+		
 		//Other functions
 
 		{ "sig": "Other::StartSlow(obj, fps)\tvoid", "doc": "" },
