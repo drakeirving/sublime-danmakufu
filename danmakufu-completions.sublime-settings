@@ -307,13 +307,13 @@
 		
 		//Other functions
 
-		{ "sig": "Other::StartSlow(obj, fps)\tvoid", "doc": "" },
-		{ "sig": "Other::StopSlow(obj)\tvoid", "doc": "" },
-		{ "sig": "Other::IsIntersected_Line_Circle(start_x, start_y, end_x, end_y, w, x, y, r)\tbool", "doc": "" },
-		{ "sig": "Other::IsIntersected_Obj_Obj(obj1, obj2)\tbool", "doc": "" },
-		{ "sig": "Other::GetObjectDistance(obj1, obj2)\tvoid", "doc": "" },
-		{ "sig": "Other::GetObject2dPosition(obj)\treal[]", "doc": "" },
-		{ "sig": "Other::Get2dPosition(x, y, z)\treal[]", "doc": "" },
+		{ "sig": "Other::StartSlow(obj, fps)\tvoid", "doc": "Parameters:\n\t1) Target (TARGET_ALL)\n\t2) FPS\nCreates a pseudo slow effect by forcing Danmakufu to run at the specified FPS value.\nThere is currently only one target available, TARGET_ALL. Use StopSlow to stop this effect." },
+		{ "sig": "Other::StopSlow(obj)\tvoid", "doc": "Parameters:\n\t1) Target (TARGET_ALL)\nRemoves the pseudo slow, and restores Danmakufu to normal FPS." },
+		{ "sig": "Other::IsIntersected_Line_Circle(start_x, start_y, end_x, end_y, w, x, y, r)\tbool", "doc": "Parameters:\n\t1) Start X of Line\n\t2) Start Y of Line\n\t3) End X of Line\n\t4) End Y of Line\n\t5) Width of Line\n\t6) X Center Circle\n\t7) Y Center Circle\n\t8) Circle Radius\nChecks if the given line is colliding with the given circle. \neturns true if there is a collision; if there is no collision, it returns false." },
+		{ "sig": "Other::IsIntersected_Obj_Obj(obj1, obj2)\tbool", "doc": "Parameters:\n\t1) Object 1 ID\n\t2) Object 2 ID\nChecks if the given objects are colliding with each other.\nReturns true if there is a collision; if there is no collision, it returns false.\nThis function is currently only available on bullet and laser objects." },
+		{ "sig": "Other::GetObjectDistance(obj1, obj2)\tvoid", "doc": "Parameters:\n\t1) Object 1 ID\n\t2) Object 2 ID\nReturns the distance between the two objects.\nIf one of the objects' ID is invalid, -1 will be returned." },
+		{ "sig": "Other::GetObject2dPosition(obj)\treal[]", "doc": "Parameters:\n\t1) Object 1 ID\nReturns the 2D coordinates of a 3D object. The array is returned as [X, Y]." },
+		{ "sig": "Other::Get2dPosition(x, y, z)\treal[]", "doc": "Parameters:\n\t1) X\n\t2) Y\n\t3) Z\nReturns the 2D coordinates of the given 3D coordinates. The array is returned as [X, Y]." },
 
 		// Generic Object functions
 
