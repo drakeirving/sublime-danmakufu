@@ -41,11 +41,35 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(EV)_[\w_]*\b</string>
+			<string>\b(EV)_[\w_]+\b</string>
 			<key>name</key>
-			<string>variable.parameter.event.danmakufu</string>
+			<string>variable.parameter.enum.event.danmakufu</string>
 			<key>comment</key>
-			<string>Only variable.parameter for the color choice</string>
+			<string>Enums only under variable.parameter to differ color with constants</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(ID_INVALID|KEY_INVALID|OBJ_[\w_]+|TYPE_[\w_]+|ITEM_[\w_]+)\b</string>
+			<key>name</key>
+			<string>variable.parameter.enum.other.danmakufu</string>
+			<key>comment</key>
+			<string>Enums only under variable.parameter to differ color with constants</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(BLEND_ALPHA|BLEND_ADD_RGB|BLEND_ADD_ARGB|BLEND_MULTIPLY|BLEND_SUBTRACT|BLEND_INV_DESTRGB)\b</string>
+			<key>name</key>
+			<string>variable.parameter.enum.blendtype.danmakufu</string>
+			<key>comment</key>
+			<string>Enums only under variable.parameter to differ color with constants</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(INFO_SCRIPT_TYPE|INFO_SCRIPT_PATH|INFO_SCRIPT_ID|INFO_SCRIPT_TITLE|INFO_SCRIPT_TEXT|INFO_SCRIPT_IMAGE|INFO_SCRIPT_REPLAY_NAME|INFO_LIFE|INFO_DAMAGE_RATE_SHOT|INFO_DAMAGE_RATE_SPELL|INFO_SHOT_HIT_COUNT|INFO_IS_SPELL|INFO_IS_LAST_SPELL|INFO_IS_DURABLE_SPELL|INFO_IS_LAST_STEP|INFO_TIMER|INFO_TIMERF|INFO_ORGTIMERF|INFO_SPELL_SCORE|INFO_REMAIN_STEP_COUNT|INFO_ACTIVE_STEP_LIFE_COUNT|INFO_ACTIVE_STEP_TOTAL_MAX_LIFE|INFO_ACTIVE_STEP_TOTAL_LIFE|INFO_PLAYER_SHOOTDOWN_COUNT|INFO_PLAYER_SPELL_COUNT|INFO_ACTIVE_STEP_LIFE_RATE_LIST|INFO_CURRENT_LIFE|INFO_CURRENT_LIFE_MAX|INFO_RECT|INFO_DELAY_COLOR|INFO_BLEND|INFO_COLLISION|INFO_COLLISION_LIST|INFO_ITEM_SCORE|REPLAY_FILE_PATH|REPLAY_DATE_TIME|REPLAY_USER_NAME|REPLAY_TOTAL_SCORE|REPLAY_FPS_AVERAGE|REPLAY_PLAYER_NAME|REPLAY_STAGE_INDEX_LIST|REPLAY_STAGE_START_SCORE_LIST|REPLAY_STAGE_LAST_SCORE_LIST|REPLAY_COMMENT)\b</string>
+			<key>name</key>
+			<string>variable.parameter.enum.infotype.danmakufu</string>
+			<key>comment</key>
+			<string>Enums only under variable.parameter to differ color with constants</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -110,6 +134,8 @@
 			<string>^\s*@(Initialize|Loading|Event|MainLoop|Finalize)\b</string>
 			<key>name</key>
 			<string>entity.name.function.predefined.danmakufu</string>
+			<key>comment</key>
+			<string>The @ prefix can be used to define any subroutine, but this should be considered bad style.</string>
 		</dict>
 		<dict>
 			<key>begin</key>
