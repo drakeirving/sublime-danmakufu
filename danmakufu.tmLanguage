@@ -187,6 +187,12 @@
 				</dict>
 			</array>
 		</dict>
+		<dict>
+			<key>match</key>
+			<string>:</string>
+			<key>name</key>
+			<string>invalid.danmakufu</string>
+		</dict>
 		<!-- <dict>
 			<key>match</key>
 			<string>\b(put|functions|here)\(</string>
