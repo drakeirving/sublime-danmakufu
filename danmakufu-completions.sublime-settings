@@ -65,7 +65,7 @@
 
 		{ "sig": "Debug::WriteLog(string)\tvoid", "doc": "Parameters:\n\t1) string\nOutputs the given string to the log file." },
 		{ "sig": "Debug::RaiseError(string)\tvoid", "doc": "Parameters:\n\t1) string\nCreates an error box with the specified string.\nExecution of the script is stopped, closing the script." },
-		{ "sig": "Debug::RaiseError(string)\tvoid", "doc": "Parameters:\n\t1) condition (boolean)\n\t2) value (free)\nRaises an error with the specified value and terminates the script if the condition is false." },
+		{ "sig": "Debug::assert(condition, value)\tvoid", "doc": "Parameters:\n\t1) condition (boolean)\n\t2) value (free)\nRaises an error with the specified value and terminates the script if the condition is false." },
 
 		// Common Data functions
 
